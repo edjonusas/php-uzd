@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Edvinas</h1>
-    <p>Moku kurti statini turini</p>
+    <p>Moku kurti statini turini.</p>
+    <p>Atidaryta <?php print date("l jS \of F Y h:i:s A"); ?></p>
 </body>
 </html>
