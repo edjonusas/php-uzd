@@ -8,9 +8,8 @@
     <title>As valdau HTML ir<?php print 'PHP'; ?></title>
 </head>
 <body>
-
     <h1>Edvinas - HTL ir <?php print 'PHP'; ?> asas </h1>
     <p>Moku kurti statini turini.</p>
-    <p>Atidaryta <?php print date('l jS \of F Y h:i:s A'); ?></p>
+    <p>Atidaryta <?php print date('Y-m-d H:m:s'); ?></p>
 </body>
 </html>
