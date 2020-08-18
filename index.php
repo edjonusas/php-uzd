@@ -8,7 +8,7 @@
     <title>bomb</title>
     <style>
 
-        main>div {
+        body>div {
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -17,10 +17,17 @@
         }
 
         .bomb {
-            border-radius: 50%;
-            background: cadetblue;
-            width: <?php print date('s')*10; ?>px;
-            height: <?php print date('s')*10; ?>px;
+            width: <?php print date('s')*10 + 50; ?>px;
+            height: <?php print date('s')*10 + 50; ?>px;
+            background-image: url("https://image.freepik.com/free-vector/realistic-rounded-bomb-with-fuse_23-2148205997.jpg");
+            background-size: cover;
+        }
+
+        .boom00 {
+            background-image: url("https://i.insider.com/50f0c59e6bb3f7b23800000b?width=1100&format=jpeg&auto=webp");
+            background-size: cover;
+            width: 500px;
+            height: 500px;
         }
 
         body {
@@ -29,11 +36,13 @@
     </style>
 </head>
 <body>
-<main>
     <div>
-        <div><span class="time"><?php print date('s'); ?></span></div>
-        <div class="bomb"></div>
+        <div>
+            <span class="time"><?php print date('s'); ?></span>
+        </div>
+        <div>
+            <div class="bomb <?php print 'boom' . date('s'); ?>"></div>
+        </div>
     </div>
-</main>
 </body>
 </html>
