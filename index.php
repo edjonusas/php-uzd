@@ -1,3 +1,11 @@
+<?php
+
+$distance = rand(1000, 2000);
+$consumtion = 7.5 / 100;
+$price_l = 1.3;
+$fuel_total = $distance * $consumtion;
+$trip_price = $fuel_total * $price_l;
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,44 +13,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>bomb</title>
-    <style>
-
-        body>div {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bomb {
-            width: <?php print date('s')*10 + 50; ?>px;
-            height: <?php print date('s')*10 + 50; ?>px;
-            background-image: url("https://image.freepik.com/free-vector/realistic-rounded-bomb-with-fuse_23-2148205997.jpg");
-            background-size: cover;
-        }
-
-        .boom00 {
-            background-image: url("https://i.insider.com/50f0c59e6bb3f7b23800000b?width=1100&format=jpeg&auto=webp");
-            background-size: cover;
-            width: 500px;
-            height: 500px;
-        }
-
-        body {
-            font-size: 30px;
-        }
-    </style>
+    <title>trip</title>
 </head>
 <body>
-    <div>
-        <div>
-            <span class="time"><?php print date('s'); ?></span>
-        </div>
-        <div>
-            <div class="bomb <?php print 'boom' . date('s'); ?>"></div>
-        </div>
-    </div>
+<h1>Keliones skaiciuokle</h1>
+<ul>
+    <li>Nuvaziuota distancija: <?php print $distance; ?></li>
+    <li>sunaudota : <?php print $fuel_total; ?></li>
+    <li>kaina : <?php print $trip_price; ?></li>
+</ul>
 </body>
 </html>
