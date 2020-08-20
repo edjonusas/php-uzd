@@ -1,30 +1,40 @@
 <?php
-
-$persons = [
+$products = [
     [
-        'name' => 'Petras Pizdzius',
-        'items' => [
-            'name' => 'phone',
-            'quantity' => 0 ,
-            'status' => false
-        ]
+        [
+            'name' => 'Kiaušiniai',
+            'qty' => 3,
+        ],
+        [
+            'name' => 'Grietinė',
+            'qty' => 1,
+        ],
+        [
+            'name' => 'Jogurtas',
+            'qty' => 2,
+        ],
+        [
+            'name' => 'Žuvis',
+            'qty' => 0,
+        ],
     ],
     [
-        'name' => 'Tomas Ablomas',
-        'items' => [
-            'name' => 'bulijonas',
-            'quantity' => 1 ,
-            'status' => true
-        ]
-    ],
-    [
-        'name' => 'Ana Sitkova',
-        'items' => [
-            'name' => 'rulonas',
-            'quantity' => 0 ,
-            'status' => false
-        ]
+        [
+            'name' => 'Pienas',
+            'qty' => 1,
+        ],
+        [
+            'name' => 'Kefyras',
+            'qty' => 0,
+        ],
+        [
+            'name' => 'Degtinė',
+            'qty' => 2,
+        ],
+        [
+            'name' => 'Kečupas',
+            'qty' => 2,
+        ],
     ],
 ];
-
-var_dump($persons);
+var_dump($products);
