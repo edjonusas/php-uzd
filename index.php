@@ -1,10 +1,27 @@
 <?php
+function beer() {
+    $money = rand(3,15);
+    $beer_cost = 3;
+    $total = 0;
+    $full_glass = '<div class="beer-full"></div>';
+    $empty_glass = '<div class="beer-empty"></div>';
+    $all_time = 0;
+    for ($i = 1;$beer_cost <= $money; $i++ ) {
+        $time = rand(20,30);
+        $all_time += $time;
+        $bokal_time = date('H:i',strtotime("$all_time minutes"));
+        $money -= $beer_cost;
+        $total += $beer_cost;
+        print '<div>' . $total . '</div>';
+        print '<div>' . $bokal_time . '</div>';
+        if ($i === 1) {
+            print $full_glass;
+        } else {
+            print str_repeat($empty_glass, $i-1) . $full_glass;
+        }
+    }
+}
 
-$distance = rand(1000, 2000);
-$consumtion = 7.5 / 100;
-$price_l = 1.3;
-$fuel_total = $distance * $consumtion;
-$trip_price = $fuel_total * $price_l;
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,13 +31,26 @@ $trip_price = $fuel_total * $price_l;
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>trip</title>
+    <style>
+        .beer-full {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://www.horiba.com/fileadmin/_processed_/csm_01_02-2019_Beer_Brewing_53ef2818e5.png");
+            background-size: cover;
+        }
+        .beer-empty {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://image.shutterstock.com/image-photo/empty-beer-glass-on-isolated-260nw-671366509.jpg");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-<h1>Keliones skaiciuokle</h1>
-<ul>
-    <li>Nuvaziuota distancija: <?php print $distance; ?></li>
-    <li>sunaudota : <?php print $fuel_total; ?></li>
-    <li>kaina : <?php print $trip_price; ?></li>
-</ul>
+    <main>
+        <?php beer() ?>
+    </main>
 </body>
 </html>
