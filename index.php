@@ -1,40 +1,23 @@
 <?php
-$products = [
+$bowling = [
     [
-        [
-            'name' => 'Kiaušiniai',
-            'qty' => 3,
-        ],
-        [
-            'name' => 'Grietinė',
-            'qty' => 1,
-        ],
-        [
-            'name' => 'Jogurtas',
-            'qty' => 2,
-        ],
-        [
-            'name' => 'Žuvis',
-            'qty' => 0,
-        ],
+        'enabled' => true,
+        'pins' => [
+            [1, 0, 0, 1],
+            [0, 0, 1],
+            [0, 1],
+            [1],
+        ]
     ],
     [
-        [
-            'name' => 'Pienas',
-            'qty' => 1,
-        ],
-        [
-            'name' => 'Kefyras',
-            'qty' => 0,
-        ],
-        [
-            'name' => 'Degtinė',
-            'qty' => 2,
-        ],
-        [
-            'name' => 'Kečupas',
-            'qty' => 2,
-        ],
-    ],
+        'enabled' => false,
+        'pins' => [
+            [0, 0, 0, 0],
+            [0, 0, 0],
+            [0, 0],
+            [0],
+        ]
+    ]
 ];
-var_dump($products);
+
+var_dump($bowling);
