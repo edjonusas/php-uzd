@@ -1,0 +1,40 @@
+        .bg {
+            position: relative;
+            background-image: url("https://cdns.kinguin.net/media/category/2/-/2-1024_4245.jpg");
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .bg > div {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 200px;
+        }
+
+        .car {
+            content: url("https://i.imgur.com/xGKtM.png");
+        }
+
+        .ballas {
+            content: url("https://pngimage.net/wp-content/uploads/2018/06/%D0%BD%D0%B8%D0%B3%D0%B0-png-3.png");
+        }
+
+        .cop-car {
+            content: url("https://i.imgur.com/DMY7H5u.png");
+        }
+
+        .vagos {
+            content: url("https://i.imgur.com/PL5RCkt.png");
+        }
+
+        .fire {
+            background-image: url("https://www.freeiconspng.com/uploads/fire-vector-icon-png-27.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .target {
+            background-image: url("https://img.icons8.com/pastel-glyph/2x/define-location.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
