@@ -22,20 +22,60 @@ $game = [
             'y' => 78,
             'class' => 'vagos'
         ],
+    ],
+    'hud' => [
+        'time' => date('H:i', strtotime("3 hours")),
+        'armor' => rand(1, 100),
+        'health' => rand(1, 100),
+        'weapon' => [
+            [
+                'name' => 'breaker',
+                'ammo' => 'infinite'
+            ],
+            [
+                'name' => 'katana',
+                'ammo' => 'infinite'
+            ],
+            [
+                'name' => 'knife',
+                'ammo' => 'infinite'
+            ],
+            [
+                'name' => 'm4',
+                'ammo' => '120'
+            ],
+        ],
+        'money' => 100,
+        'wanted' => 2,
     ]
 ];
 
-https://i.pinimg.com/originals/03/c9/de/03c9de444b1f392ed18e67ea0d7d7aac.png
+$fire_count = 0;
 
 foreach ($game['objects'] as $key => $object) {
-    $game['objects'][$key]['on_fire'] = rand(0, 1) ? 'fire' : '';
-    if ($game['objects'][$key]['on_fire'] === 'fire') {
-        $game['objects'][$key]['is_target'] = '';
-    } else {
-        $game['objects'][$key]['is_target'] = 'target';
-    }
+
+    $object['on_fire'] = rand(true, false);
+    $object['on_fire'] ? ++$fire_count : 0;
+    $object['is_target'] = !$object['on_fire'];
+    $object['class'] .= ' ' . ($object['on_fire'] ? 'fire' : 'target');
+
+    $game['objects'][$key] = $object;
 }
-var_dump($game);
+
+//money
+function money($count)
+{
+    $money_count = 13000 + 520 * $count;
+    $length = 8; //digits
+    return '$' . substr(str_repeat(0, $length) . $money_count, -$length);
+}
+
+
+foreach ($game['objects'] as $key => $object) {
+
+}
+
+$active_weapon = $game['hud']['weapon'][rand(0, count($game['hud']['weapon']) - 1)]['name'];
 ?>
 
 <!doctype html>
@@ -46,16 +86,39 @@ var_dump($game);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://allfont.net/allfont.css?fonts=pricedown" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 <div class="bg">
+    <div class="hud">
+        <div>
+            <div>
+                <div>
+                    <div class="weapon <?= $active_weapon; ?>"></div>
+                </div>
+            </div>
+            <div class="time-armor-col">
+                <div><?= $game['hud']['time'] ?></div>
+                <div class="armor-bar">
+                    <div class="armor-bar-line" style="width: <?= $game['hud']['armor'] ?>%"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="health-bar">
+                <div class="health-bar-line" style="width: <?= $game['hud']['health'] ?>%"></div>
+            </div>
+            <div class="money"><?= money($fire_count); ?></div>
+            <div>wanted</div>
+        </div>
+    </div>
     <?php foreach ($game['objects'] as $object): ?>
-        <div class="<?= $object['class'] . " " . $object['on_fire'] . " " . $object['is_target'] ?>"
-             style=" left:<?= $object['x'] ?>% ; top: <?= $object['y'] ?>vh"></div>
+        <div class="object <?php print $object['class']; ?>"
+             style=" left:<?= $object['x']; ?>% ; top: <?= $object['y']; ?>vh">>
+        </div>
     <?php endforeach; ?>
-</div>
 </body>
 </html>
