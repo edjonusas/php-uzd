@@ -62,7 +62,7 @@
 }
 
 .time-armor-col {
-    font-size: 79px;
+    font-size: 70px;
     width: 128px;
     height: 128px;
 }
@@ -114,4 +114,22 @@
 
 .m4 {
     background-image: url("m4.png");
+}
+
+.star-block {
+    display: flex;
+}
+
+.star {
+    width: 42px;
+    height: 42px;
+    background-image: url("star.png");
+    background-size: contain;
+}
+
+.star-empty {
+    width: 42px;
+    height: 42px;
+    background-image: url("star-empty.png");
+    background-size: contain;
 }

@@ -46,7 +46,7 @@ $game = [
             ],
         ],
         'money' => 100,
-        'wanted' => 2,
+        'wanted' => 0,
     ]
 ];
 
@@ -56,6 +56,7 @@ foreach ($game['objects'] as $key => $object) {
 
     $object['on_fire'] = rand(true, false);
     $object['on_fire'] ? ++$fire_count : 0;
+
     $object['is_target'] = !$object['on_fire'];
     $object['class'] .= ' ' . ($object['on_fire'] ? 'fire' : 'target');
 
@@ -63,17 +64,13 @@ foreach ($game['objects'] as $key => $object) {
 }
 
 //money
-function money($count)
-{
-    $money_count = 13000 + 520 * $count;
-    $length = 8; //digits
-    return '$' . substr(str_repeat(0, $length) . $money_count, -$length);
-}
+$money_count = 13000 + 520 * $fire_count;
+$length = 8; //digits
+$game['hud']['money'] = '$' . substr(str_repeat(0, $length) . $money_count, -$length);
 
+//wanted level
+$game['hud']['wanted'] = $fire_count;
 
-foreach ($game['objects'] as $key => $object) {
-
-}
 
 $active_weapon = $game['hud']['weapon'][rand(0, count($game['hud']['weapon']) - 1)]['name'];
 ?>
@@ -96,9 +93,7 @@ $active_weapon = $game['hud']['weapon'][rand(0, count($game['hud']['weapon']) - 
     <div class="hud">
         <div>
             <div>
-                <div>
-                    <div class="weapon <?= $active_weapon; ?>"></div>
-                </div>
+                <div class="weapon <?= $active_weapon; ?>"></div>
             </div>
             <div class="time-armor-col">
                 <div><?= $game['hud']['time'] ?></div>
@@ -111,8 +106,12 @@ $active_weapon = $game['hud']['weapon'][rand(0, count($game['hud']['weapon']) - 
             <div class="health-bar">
                 <div class="health-bar-line" style="width: <?= $game['hud']['health'] ?>%"></div>
             </div>
-            <div class="money"><?= money($fire_count); ?></div>
-            <div>wanted</div>
+            <div class="money"><?= $game['hud']['money']; ?></div>
+            <div class="star-block">
+                <?php for ($i = 1; $i <= 6; $i++) : ?>
+                    <span class="<?= $game['hud']['wanted'] < $i ? 'star-empty' : 'star'; ?>"></span>
+                <?php endfor; ?>
+            </div>
         </div>
     </div>
     <?php foreach ($game['objects'] as $object): ?>
