@@ -51,6 +51,16 @@
       <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\icons" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.index.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +76,8 @@
       <workItem from="1598249391201" duration="6830000" />
       <workItem from="1598263102142" duration="2914000" />
       <workItem from="1598268929478" duration="11111000" />
-      <workItem from="1598337393125" duration="8911000" />
+      <workItem from="1598337393125" duration="17507000" />
+      <workItem from="1598421026692" duration="1822000" />
     </task>
     <servers />
   </component>
@@ -94,9 +105,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598268925500" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1597829037931">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1598364888580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597829037931" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598364888580" />
   </component>
 </project>

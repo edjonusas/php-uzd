@@ -35,203 +35,69 @@ $vilnius = [
             "population" => 19423
         ],
     ]
-]
-?>
+];
 
-<!-- 1. Sudarykite masyvą, kuriame būtų aprašyta Vilniaus:
-  "mayor" meras, string
-  "address" savivaldybės adresas, string
-  "number" numeris, string
-  "area" plotas kvadratiniais kilometrais, int
-  "elderships" seniunijų masyvas [] - BENT 3 SENIŪNIJOS -->
-<!-- 2. Kiekviena seniunija turi turėti:
-    title: pavadinimą, string
-    elder: seniunas, string
-    population: gyventojų skaičių, number -->
-
-<!-- 3. Atspausdinkite visų seniunijų pavadinimus -->
-
-<!-- 4. Atspaudinkite vienos iš seniunijų duomenis -->
-<?php
-//foreach ($vilnius["elderships"][0] as $info) {
-//    print $info;
-//}
-?>
-<!-- 5. Atspausdinkite visų seniunijų duomenis lentele -->
-<!--<table>-->
-<!--    <thead>-->
-<!--        <tr>-->
-<!--            <td>title</td>-->
-<!--            <td>adress</td>-->
-<!--            <td>elder</td>-->
-<!--            <td>population</td>-->
-<!--        </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    --><?php //foreach ($vilnius["elderships"] as $eldership) : ?><!-- {-->
-<!--        <tr>-->
-<!--            <td>--><? //= $eldership['title']; ?><!--</td>-->
-<!--            <td>--><? //= $eldership['address']; ?><!--</td>-->
-<!--            <td>--><? //= $eldership['elder']; ?><!--</td>-->
-<!--            <td>--><? //= $eldership['population']; ?><!--</td>-->
-<!--        </tr>-->
-<!--    --><?php //endforeach ?>
-<!--    </tbody>-->
-<!--</table>-->
-<!-- 6. Atspausdinkite tik tų seniunijų duomenis kur gyventojų kiekis yra iki 20 tūkst. -->
-<?php //foreach ($vilnius["elderships"] as $eldership) {
-//    if ($eldership['population'] > 20000) {
-//        $eldership['title'];
-//        $eldership['address'];
-//        $eldership['elder'];
-//        $eldership['population'];
-//    }
-//
-//}
-//?>
-<!---->
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <td>title</td>-->
-<!--        <td>adress</td>-->
-<!--        <td>elder</td>-->
-<!--        <td>population</td>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    --><?php //foreach ($vilnius["elderships"] as $eldership) : ?><!-- {-->
-<!--        --><?php //if ($eldership['population'] > 20000) : ?>
-<!--            <tr>-->
-<!--                <td>--><? //= $eldership['title']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['address']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['elder']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['population']; ?><!--</td>-->
-<!--            </tr>-->
-<!--        --><?php //endif; ?>
-<!--    --><?php //endforeach; ?>
-<!--    </tbody>-->
-<!--</table>-->
-<!-- 7. Atspausdinkite tik tų seniunijų duomenis kur gyventojų kiekis yra virš 50 tūkst. -->
-
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <td>title</td>-->
-<!--        <td>adress</td>-->
-<!--        <td>elder</td>-->
-<!--        <td>population</td>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    --><?php //foreach ($vilnius["elderships"] as $eldership) : ?>
-<!--        --><?php //if ($eldership['population'] > 50000) : ?>
-<!--            <tr>-->
-<!--                <td>--><? //= $eldership['title']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['address']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['elder']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['population']; ?><!--</td>-->
-<!--            </tr>-->
-<!--        --><?php //endif; ?>
-<!--    --><?php //endforeach; ?>
-<!--    </tbody>-->
-<!--</table>-->
-
-<!-- 8. Atspausdinkite tik tų seniunijų duomenis
-   kur gyventojų kiekis yra nuo 30 iki 40 tūktstančių -->
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <td>title</td>-->
-<!--        <td>adress</td>-->
-<!--        <td>elder</td>-->
-<!--        <td>population</td>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    --><?php //foreach ($vilnius["elderships"] as $eldership) : ?>
-<!--        --><?php //if ($eldership['population'] > 30000 && $eldership['population'] < 40000) : ?>
-<!--            <tr>-->
-<!--                <td>--><? //= $eldership['title']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['address']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['elder']; ?><!--</td>-->
-<!--                <td>--><? //= $eldership['population']; ?><!--</td>-->
-<!--            </tr>-->
-<!--        --><?php //endif; ?>
-<!--    --><?php //endforeach; ?>
-<!--    </tbody>-->
-<!--</table>-->
-<!-- 9. Stulpeliu atspausdinkite kiekvienos seniūnijos gyventojų skaičių -->
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <td>population</td>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    --><?php //foreach ($vilnius["elderships"] as $eldership) : ?>
-<!--            <tr>-->
-<!--                <td>--><? //= $eldership['population']; ?><!--</td>-->
-<!--            </tr>-->
-<!--    --><?php //endforeach; ?>
-<!--    </tbody>-->
-<!--</table>-->
-<!-- 10. Stulpeliu atspausdinkite kiekvienos seniūnijos gyventojų skaičių, išrikiavus mažėjimo tvarka -->
-<?php
-// Sort the multidimensional array
-//usort($vilnius["elderships"],"custom_sort");
-//// Define the custom sort function
-//function custom_sort($a,$b) {
-//    return $a['population']<$b['population'];
-//}
-//?>
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <td>population</td>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    --><?php //foreach ($vilnius["elderships"] as $eldership) : ?>
-<!--        <tr>-->
-<!--            <td>--><? //= $eldership['population']; ?><!--</td>-->
-<!--        </tr>-->
-<!--    --><?php //endforeach; ?>
-<!--    </tbody>-->
-<!--</table>-->
-<!-- 11. Susumuokite visų seniūnijos gyventojų skaičių -->
-<?php
-//$sum = 0;
-//    foreach ($vilnius["elderships"] as $eldership) {
-//        $sum += $eldership['population'];
-//    }
-//    print $sum;
-//?>
-<!-- 12. Suskaičiuokite vidutinį gyventojų skaičių vienoje seniūnijoje -->
-<?php
-//usort($vilnius["elderships"], "custom_sort");
-////// Define the custom sort function
-//function custom_sort($a, $b)
+//function print_array($array)
 //{
-//    return $a['population'] < $b['population'];
+//    $string = '';
+//    foreach ($array as $key => $value) {
+//        gettype($key) === 'string' ? $string .= $key . ' : ' : '';
+//        gettype($value) === 'string' ? $string .= $value . ', ' : '';
+//        foreach ($value as $k => $v) {
+//            gettype($k) === 'string' ? $string .= $k . ' : ' : '';
+//            gettype($v) === 'string' ? $string .= $v . ', ' : '';
+//        }
+//    }
+//    return $string;
 //}
 //
-////?>
-<?php
-//$sum = 0;
-//foreach ($vilnius["elderships"] as $eldership) {
-//    $sum += $eldership['population'];
-//}
-//print $sum / count($vilnius["elderships"]);
+//var_dump(print_array($vilnius));
+
+//function array_keys_val(array $array)
+//{
+//    $arr = [];
 //
-//?>
-<!-- 13. Suskaičiuokite vidutinį gyventojų skaičių vienoje seniūnijoje atmetus didžiausią ir mažiausią seniuniją -->
-<?php
-usort($vilnius["elderships"], "custom_sort");
-// Define the custom sort function
-function custom_sort($a, $b)
+//    foreach ($array as $key => $value) {
+//        $arr[] = $key;
+//        $arr[] = $value;
+//        if (is_array($value)) {
+//            $arr = array_merge($arr, array_keys_val($value));
+//        }
+//    }
+//
+//    return $arr;
+//}
+//
+//var_dump(array_keys_val($vilnius));
+
+ //matrix
+function generate_matrix($num1, $num2)
 {
-    return $a['population'] < $b['population'];
+    $arr = [];
+    $arr_row = [];
+    for ($i = 0; $i < $num1; $i++) {
+        for ($x = 0; $x < $num2; $x++) {
+            $arr_row[] = rand(0, 1);
+        }
+        $arr[$i] = $arr_row;
+        $arr_row = [];
+    }
+    return $arr;
 }
 
-//?>
+$matrix = generate_matrix(5, 3);
+var_dump($matrix);
+
+
+//$array = ['b', 'a', 'b', 'e', 'a', 'i'];
+//
+//function replace_values(&$array, $from, $to)
+//{
+//    foreach ($array as $key => $item) {
+//        $item === $from ? $array[$key] = $to : '';
+//    }
+//}
+//
+//replace_values($array, 'b', 'cool');
+//
+//var_dump($array);
