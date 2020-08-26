@@ -1,21 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
-/**
- *function to square number
- * @param int $number
- * @return int
- */
-function square(int $number): int
-{
-    return pow($number, 2);
-}
-
-if (isset($_POST['number']) && is_numeric(trim($_POST['number']))) {
-    $text = square(intval(trim($_POST['number'])));
+if (isset($_POST['size'])) {
+    $input_value = $_POST['size'];
 } else {
-    $text = 'enter number';
+    $input_value = 150;
 }
 ?>
 
@@ -27,13 +15,20 @@ if (isset($_POST['number']) && is_numeric(trim($_POST['number']))) {
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+	<style>
+        .img {
+            background-image: url("https://www.johnnyseeds.com/dw/image/v2/BBBW_PRD/on/demandware.static/-/Sites-jss-master/default/dw22620c58/images/products/vegetables/00053_01_brilliantfield.jpg?sw=387&cx=226&cy=0&cw=1196&ch=1196");
+            background-size: cover;
+        }
+	</style>
 </head>
 
 <body>
-<form method="POST">
-	<input name="number" type="text">
-	<button name="submit" value="submit">Submit</button>
+<form method="post">
+	<input type="range" min="100" max="200" value="<?= $input_value; ?>" name="size">
+	<button name="submit">Submit</button>
 </form>
-<div><?= $text ?></div>
+<div class="img"
+     style=" width:<?= $input_value; ?>px; height:<?= $input_value; ?>px"></div>
 </body>
 </html>

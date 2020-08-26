@@ -20,8 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/functions/html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/form.tp1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pricedown.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pricedown.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pricedown.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/breaker.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/katana.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/knife.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/star-empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +65,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/index.php">
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="PHP Script.index.php" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,7 +85,7 @@
       <workItem from="1598263102142" duration="2914000" />
       <workItem from="1598268929478" duration="11111000" />
       <workItem from="1598337393125" duration="17507000" />
-      <workItem from="1598421026692" duration="6895000" />
+      <workItem from="1598421026692" duration="9157000" />
     </task>
     <servers />
   </component>
