@@ -44,6 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -77,7 +78,7 @@
       <workItem from="1598263102142" duration="2914000" />
       <workItem from="1598268929478" duration="11111000" />
       <workItem from="1598337393125" duration="17507000" />
-      <workItem from="1598421026692" duration="1822000" />
+      <workItem from="1598421026692" duration="6895000" />
     </task>
     <servers />
   </component>
@@ -97,6 +98,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="371" y="116" key="#Inspections" timestamp="1598430233186">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="371" y="116" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1598430233186" />
     <state x="723" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598009498712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -105,6 +110,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598268925500" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1598430915247">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598430915247" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1598364888580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
