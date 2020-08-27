@@ -20,20 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/form.tp1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pricedown.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pricedown.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pricedown.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/breaker.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katana.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/knife.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/star-empty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +74,9 @@
       <workItem from="1598263102142" duration="2914000" />
       <workItem from="1598268929478" duration="11111000" />
       <workItem from="1598337393125" duration="17507000" />
-      <workItem from="1598421026692" duration="9157000" />
+      <workItem from="1598421026692" duration="20469000" />
+      <workItem from="1598463263118" duration="2353000" />
+      <workItem from="1598507784029" duration="1707000" />
     </task>
     <servers />
   </component>
@@ -121,9 +112,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598430915247" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1598364888580">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1598444746551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598364888580" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598444746551" />
   </component>
 </project>
