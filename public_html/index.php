@@ -1,13 +1,11 @@
 <?php
-
-require 'functions/html.php';
+require '../bootloader.php';
 
 $form = [
     'attr' => [
         'action' => 'index.php',
         'method' => 'POST',
-        'class' => 'my-form',
-        'id' => 'login-form',
+        'class' => 'my-form',        'id' => 'login-form',
     ],
     'fields' => [
         'email' => [
@@ -31,6 +29,22 @@ $form = [
                     'placeholder' => 'Enter your name',
                 ],
             ],
+        ],
+        'sex' => [
+            'label' => 'Lytis',
+            'type' => 'select',
+	        'value' => 'male',
+            'option' => [
+                'male' => 'Vyras',
+                'female' => 'Moteris',
+	            'other' => 'Kitas'
+            ],
+	        'extra' => [
+	        		'attr' => [
+	        				'class' => 'sex-selector'
+
+			        ]
+	        ]
         ],
     ],
     'buttons' => [
@@ -57,6 +71,6 @@ var_dump($_POST);
 	<title>formatron3000</title>
 </head>
 <body>
-<?php include 'templates/form.tp1.php'; ?>
+<?php include '../core/templates/form.tp1.php'; ?>
 </body>
 </html>

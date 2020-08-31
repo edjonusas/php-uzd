@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bootloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/form.tp1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/index2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.tp1.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.tp1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.tp1.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +54,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\public_html" />
       <recent name="C:\Users\Edvinas\OneDrive\Desktop\www" />
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\core" />
       <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\icons" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/index.php">
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/public_html/index.php">
       <method v="2" />
     </configuration>
   </component>
@@ -77,7 +83,9 @@
       <workItem from="1598337393125" duration="17507000" />
       <workItem from="1598421026692" duration="20469000" />
       <workItem from="1598463263118" duration="2353000" />
-      <workItem from="1598507784029" duration="17316000" />
+      <workItem from="1598507784029" duration="19420000" />
+      <workItem from="1598594661678" duration="14904000" />
+      <workItem from="1598853755866" duration="8565000" />
     </task>
     <servers />
   </component>
@@ -109,6 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598268925500" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1598612484533">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598612484533" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1598430915247">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

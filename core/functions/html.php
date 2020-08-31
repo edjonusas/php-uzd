@@ -19,7 +19,7 @@ function html_attr(array $attrs): string
 }
 
 /**
- * Generating new input field from given array
+ * Generating input field from given array
  *
  * @param string $field_id
  * @param array $field
@@ -38,7 +38,7 @@ function input_attr(string $field_id, array $field): string
 }
 
 /**
- * Generating new button from given array
+ * Generating button from given array
  *
  * @param string $button_id
  * @param array $button
@@ -47,10 +47,47 @@ function input_attr(string $field_id, array $field): string
 function button_attr(string $button_id, array $button): string
 {
     $attributes = [
-        'name' => $button['title'],
+        'name' => 'action',
         'value' => $button_id,
     ];
     $attributes += $button['extra']['attr'] ?? '';
 
     return html_attr($attributes);
 }
+
+/**
+ * Generating select tag attributes from given array
+ *
+ * @param string $field_id
+ * @param array $field
+ * @return string
+ */
+function select_attr(string $field_id, array $field): string
+{
+    $attributes = [
+        'name' => $field_id,
+    ];
+    $attributes += $field['extra']['attr'] ?? [];
+    return html_attr($attributes);
+}
+
+/**
+ * Generating option tag
+ *
+ * @param string $option_id
+ * @param array $field
+ * @return string
+ */
+function option_attr(string $option_id, array $field): string
+{
+    $option = $field['option'][$option_id];
+    $attributes = [
+        'value' => $option_id,
+    ];
+
+    if ($field['value'] == $option_id) $attributes['selected'] = true;
+    if (is_array($option)) $attributes += $option['attr'];
+
+    return html_attr($attributes);
+}
+
