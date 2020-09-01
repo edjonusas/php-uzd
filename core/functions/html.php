@@ -91,3 +91,49 @@ function option_attr(string $option_id, array $field): string
     return html_attr($attributes);
 }
 
+///**
+// * sanitize array keys
+// *
+// * @param array $fields
+// * @return array
+// */
+//function sanitize_post(array $fields): array
+//{
+//    $arr = [];
+//    foreach ($fields as $key => $field) {
+//        $arr[$key] = $field;
+//    }
+//    var_dump($arr);
+//    return filter_input_array(INPUT_POST, $arr);
+//}
+
+///**
+// * sanitize array keys from form
+// *
+// * @param array $form
+// * @return array
+// */
+//function sanitize_form_input_values(array $form): array
+//{
+//    $fields = [];
+//    foreach ($form['fields'] as $key => $input) {
+//        $fields[$key] = $input['filter'] ?? FILTER_SANITIZE_SPECIAL_CHARS;
+//    }
+//    return sanitize_post($fields);
+//}
+
+/**
+ * sanitize array keys from form
+ *
+ * @param array $form
+ * @return array
+ */
+function sanitize_form_input_values(array $form): array
+{
+    $filter_parameters = [];
+    foreach ($form['fields'] as $key => $field) {
+        $filter_parameters[$key] = $field['filter'] ?? FILTER_SANITIZE_SPECIAL_CHARS;
+    }
+    return filter_input_array(INPUT_POST, $filter_parameters);
+}
+

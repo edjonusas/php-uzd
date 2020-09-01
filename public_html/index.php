@@ -5,11 +5,13 @@ $form = [
     'attr' => [
         'action' => 'index.php',
         'method' => 'POST',
-        'class' => 'my-form',        'id' => 'login-form',
+        'class' => 'my-form',
+        'id' => 'login-form',
     ],
     'fields' => [
         'email' => [
             'label' => 'E-mail',
+            'filter' => FILTER_SANITIZE_EMAIL,
             'type' => 'email',
             'value' => 'test@mail',
             'extra' => [
@@ -30,21 +32,32 @@ $form = [
                 ],
             ],
         ],
+        'surname' => [
+            'label' => 'Sur Name',
+            'type' => 'text',
+            'value' => 'Jon',
+            'extra' => [
+                'attr' => [
+                    'class' => 'name-field',
+                    'placeholder' => 'Enter your name',
+                ],
+            ],
+        ],
         'sex' => [
             'label' => 'Lytis',
             'type' => 'select',
-	        'value' => 'male',
+            'value' => 'male',
             'option' => [
                 'male' => 'Vyras',
                 'female' => 'Moteris',
-	            'other' => 'Kitas'
+                'other' => 'Kitas'
             ],
-	        'extra' => [
-	        		'attr' => [
-	        				'class' => 'sex-selector'
+            'extra' => [
+                'attr' => [
+                    'class' => 'sex-selector'
 
-			        ]
-	        ]
+                ]
+            ]
         ],
     ],
     'buttons' => [
@@ -59,7 +72,11 @@ $form = [
     ]
 ];
 
-var_dump($_POST);
+$fields = ['email', 'name'];
+
+if (!empty($_POST)) {
+    $input = sanitize_form_input_values($form);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -72,5 +89,7 @@ var_dump($_POST);
 </head>
 <body>
 <?php include '../core/templates/form.tp1.php'; ?>
+<p><?php print $input['name'] ?? 'Neivesta' ?></p>
+<p><?php print $input['surname'] ?? 'Neivesta' ?></p>
 </body>
 </html>
