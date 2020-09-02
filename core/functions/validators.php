@@ -97,12 +97,14 @@ function validate_form(array &$form, array $form_values): bool
 
     foreach ($form['fields'] as $field_key => &$field) {
         $field_value = $form_values[$field_key];
-        foreach ($field['validators'] as $validator) {
-            if (is_callable($validator($field_value, $field))) {
+        foreach ($field['validators'] ?? [] as $validator) {
+            // validate is function exist, execute
+            if (is_callable($validator)) {
                 if ($validator($field_value, $field)) {
                     $field['value'] = $field_value;
                 } else {
                     $success = false;
+                    break;
                 }
             }
         }

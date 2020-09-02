@@ -61,6 +61,7 @@ $form = [
             'value' => '100',
             'validators' =>
                 [
+                    'validate_field_not_empty',
                     'validate_field_is_number',
                 ],
             'extra' => [
