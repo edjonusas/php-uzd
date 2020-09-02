@@ -55,6 +55,35 @@ function validate_field_not_empty(string $field_value, array &$field): bool
     }
 }
 
+///**
+// * form validation
+// *
+// * @param $form
+// * @param $form_values
+// * @return bool
+// */
+//function validate_form(array &$form, array $form_values): bool
+//{
+//    $success = true;
+//    foreach ($form['fields'] as $field_key => &$field) {
+//        $field_value = $form_values[$field_key];
+//        if (in_array('validate_field_not_empty', $field['validators'] ?? [])) {
+//            if (validate_field_not_empty($field_value, $field)) {
+//                $field['value'] = $field_value;
+//            } else {
+//                $success = false;
+//            }
+//        } elseif (in_array('validate_field_is_number', $field['validators'] ?? [])) {
+//            if (validate_field_is_number($field_value, $field)) {
+//                $field['value'] = $field_value;
+//            } else {
+//                $success = false;
+//            }
+//        }
+//    }
+//    return $success;
+//}
+
 /**
  * form validation
  *
@@ -65,19 +94,16 @@ function validate_field_not_empty(string $field_value, array &$field): bool
 function validate_form(array &$form, array $form_values): bool
 {
     $success = true;
+
     foreach ($form['fields'] as $field_key => &$field) {
         $field_value = $form_values[$field_key];
-        if (in_array('validate_field_not_empty', $field['validators'] ?? [])) {
-            if (validate_field_not_empty($field_value, $field)) {
-                $field['value'] = $field_value;
-            } else {
-                $success = false;
-            }
-        } elseif (in_array('validate_field_is_number', $field['validators'] ?? [])) {
-            if (validate_field_is_number($field_value, $field)) {
-                $field['value'] = $field_value;
-            } else {
-                $success = false;
+        foreach ($field['validators'] as $validator) {
+            if (is_callable($validator($field_value, $field))) {
+                if ($validator($field_value, $field)) {
+                    $field['value'] = $field_value;
+                } else {
+                    $success = false;
+                }
             }
         }
     }
