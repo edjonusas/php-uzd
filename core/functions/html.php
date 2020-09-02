@@ -91,37 +91,6 @@ function option_attr(string $option_id, array $field): string
     return html_attr($attributes);
 }
 
-///**
-// * sanitize array keys
-// *
-// * @param array $fields
-// * @return array
-// */
-//function sanitize_post(array $fields): array
-//{
-//    $arr = [];
-//    foreach ($fields as $key => $field) {
-//        $arr[$key] = $field;
-//    }
-//    var_dump($arr);
-//    return filter_input_array(INPUT_POST, $arr);
-//}
-
-///**
-// * sanitize array keys from form
-// *
-// * @param array $form
-// * @return array
-// */
-//function sanitize_form_input_values(array $form): array
-//{
-//    $fields = [];
-//    foreach ($form['fields'] as $key => $input) {
-//        $fields[$key] = $input['filter'] ?? FILTER_SANITIZE_SPECIAL_CHARS;
-//    }
-//    return sanitize_post($fields);
-//}
-
 /**
  * sanitize array keys from form
  *
@@ -137,3 +106,19 @@ function sanitize_form_input_values(array $form): array
     return filter_input_array(INPUT_POST, $filter_parameters);
 }
 
+///**
+// * empty input error message
+// *
+// * @param $form
+// * @param $form_values
+// */
+//function validate_form(array &$form, array $form_values)
+//{
+//    foreach ($form['fields'] as $key => &$field) {
+//        if ($form_values[$key] === '') {
+//            $field['error'] = 'palikote tuscia laukeli';
+//        } else {
+//            $field['value'] = $form_values[$key];
+//        }
+//    }
+//}

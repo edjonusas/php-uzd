@@ -1,0 +1,12 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    width: 60px;
+}
+
+form .message {
+    color: red;
+}

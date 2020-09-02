@@ -25,7 +25,9 @@
         <?php if (isset($field['label'])) : ?>
 			</label>
         <?php endif; ?>
-
+        <?php if (isset($field['error'])) : ?>
+			<span class="message"><?php print $field['error'] ?></span>
+        <?php endif; ?>
     <?php endforeach; ?>
 	<!--	End generating fields-->
 

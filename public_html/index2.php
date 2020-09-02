@@ -16,7 +16,7 @@ if (!empty($_POST)) {
     ]);
     var_dump($height_validated);
 }
-
+$expected_input_filters
 ?>
 
 <!doctype html>
