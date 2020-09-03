@@ -43,13 +43,12 @@
  *
  * @param $field_value
  * @param $field
- * @return bool
+ * @return bool or null
  */
-function validate_field_not_empty(string $field_value, array &$field): bool
+function validate_field_not_empty(string $field_value, array &$field)
 {
     if ($field_value === '') {
         $field['error'] = 'Laukelis tuscias';
-        return false;
     } else {
         return true;
     }
@@ -117,14 +116,38 @@ function validate_form(array &$form, array $form_values): bool
  *
  * @param $field_value
  * @param $field
- * @return bool
+ * @return bool or null
  */
-function validate_field_is_number(string $field_value, array &$field): bool
+function validate_field_is_number(string $field_value, array &$field)
 {
     if (is_numeric($field_value)) {
         return true;
     } else {
         $field['error'] = 'laukelio verte privalo buti skaicius';
-        return false;
+    }
+}
+
+/**
+ * is in given interval
+ *
+ * @param string $field_value
+ * @return bool or null
+ */
+function validate_field_number_interval(string $field_value)
+{
+    if ($field_value > 18 && $field_value < 100) {
+        return true;
+    }
+}
+
+/**
+ *
+ * @param string $field_value
+ * @return bool or null
+ */
+function validate_field_string_gap(string $field_value)
+{
+    if (count(explode(' ', trim($field_value))) > 1) {
+        return true;
     }
 }

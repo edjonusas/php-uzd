@@ -9,44 +9,14 @@ $form = [
         'id' => 'login-form',
     ],
     'fields' => [
-        'email' => [
-            'label' => 'E-mail',
-            'filter' => FILTER_SANITIZE_EMAIL,
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                ],
-            'type' => 'email',
-            'value' => 'test@mail',
-            'extra' => [
-                'attr' => [
-                    'class' => 'email-field',
-                    'placeholder' => 'jonas@balvonas.com',
-                ],
-            ],
-        ],
         'name' => [
-            'label' => 'Name',
+            'label' => 'Vardas ir Pavarde',
             'type' => 'text',
-            'value' => 'Edd',
+            'value' => 'Jonas Smitas',
             'validators' =>
                 [
                     'validate_field_not_empty',
-                ],
-            'extra' => [
-                'attr' => [
-                    'class' => 'name-field',
-                    'placeholder' => 'Enter your name',
-                ],
-            ],
-        ],
-        'surname' => [
-            'label' => 'Sur Name',
-            'type' => 'text',
-            'value' => 'Jon',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
+                    'validate_field_string_gap',
                 ],
             'extra' => [
                 'attr' => [
@@ -56,13 +26,14 @@ $form = [
             ],
         ],
         'age' => [
-            'label' => 'Age',
+            'label' => 'Amzius',
             'type' => 'text',
             'value' => '100',
             'validators' =>
                 [
                     'validate_field_not_empty',
                     'validate_field_is_number',
+                    'validate_field_number_interval',
                 ],
             'extra' => [
                 'attr' => [
@@ -71,26 +42,10 @@ $form = [
                 ],
             ],
         ],
-        'sex' => [
-            'label' => 'Lytis',
-            'type' => 'select',
-            'value' => 'male',
-            'option' => [
-                'male' => 'Vyras',
-                'female' => 'Moteris',
-                'other' => 'Kitas'
-            ],
-            'extra' => [
-                'attr' => [
-                    'class' => 'sex-selector'
-
-                ]
-            ]
-        ],
     ],
     'buttons' => [
         'save' => [
-            'title' => 'join',
+            'title' => 'Ar as normalus?',
             'extra' => [
                 'attr' => [
                     'class' => 'big-button',
@@ -104,7 +59,7 @@ $fields = ['email', 'name'];
 
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
-    validate_form($form, $input);
+    $message = validate_form($form, $input) ? 'Gal ir normalus' : 'Neee nenormalus';
 }
 ?>
 <!doctype html>
@@ -119,9 +74,7 @@ if (!empty($_POST)) {
 </head>
 <body>
 <?php include '../core/templates/form.tp1.php'; ?>
-<p><?php print $input['name'] ?? 'Neivesta' ?></p>
-<p><?php print $input['surname'] ?? 'Neivesta' ?></p>
-<p><?php print $input['email'] ?? 'Neivesta' ?></p>
-<p><?php print $input['age'] ?? 'Neivesta' ?></p>
+<p><?php print $message ?></p>
+
 </body>
 </html>

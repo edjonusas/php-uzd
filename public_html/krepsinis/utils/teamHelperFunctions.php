@@ -299,41 +299,22 @@ const TEAM_NOUNS = [
     'axes'
 ];
 
-function randArrEl($arr)
+function rand_arr_el($arr)
 {
     return $arr[rand(0, count($arr) - 1)];
 }
 
-function createRandomPlayer()
+function create_random_player()
 {
     $player = [];
-    $player['name'] = randArrEl(NAMES);
-    $player['surname'] = randArrEl(SURNAMES);
+    $player['name'] = rand_arr_el(NAMES);
+    $player['surname'] = rand_arr_el(SURNAMES);
     $player['number'] = rand(0, 99);
     $player['age'] = rand(18, 36);
     $player['height'] = rand(175, 230);
     $player['weight'] = round($player['height'] / (rand(18, 22) / 10));
-    $player['position'] = randArrEl(POSITION_TYPES);
+    $player['position'] = rand_arr_el(POSITION_TYPES);
     return $player;
-}
-
-function arr_unique_values($array)
-{
-    for ($i = 0; $i < count($array) - 1; $i++) {
-        for ($j = $i + 1; $j < count($array); $j++) {
-            if ($array[$i] === $array[$j]) return false;
-        }
-    }
-    return true;
-}
-
-function arr_map($array, $map_function)
-{
-    $mapped_arr = [];
-    foreach ($array as $el) {
-        $mapped_arr[] = $map_function($el);
-    }
-    return $mapped_arr;
 }
 
 function map_player_num($player)
@@ -344,23 +325,24 @@ function map_player_num($player)
 function createTeam()
 {
     $team = ['players' => []];
-    $team['name'] = ucfirst(randArrEl(TEAM_ADJECTIVES)) . ' ' . ucfirst(randArrEl(TEAM_NOUNS));
-    $team['coach'] = ucfirst(randArrEl(NAMES)) . ' ' . ucfirst(randArrEl(SURNAMES));
+    $team['name'] = ucfirst(rand_arr_el(TEAM_ADJECTIVES)) . ' ' . ucfirst(rand_arr_el(TEAM_NOUNS));
+    $team['coach'] = ucfirst(rand_arr_el(NAMES)) . ' ' . ucfirst(rand_arr_el(SURNAMES));
     for ($i = 0; $i < rand(11, 13); $i++) {
-        $team['players'][] = createRandomPlayer();
+        $team['players'][] = create_random_player();
     }
+    //  1. Patikrinti ir ištaisyti, jeigu yra žaidėjų su tais pačiais numeriais
+    $team_numbers = arr_map($team['players'], 'map_player_num');
+    // 1.1 - Per naujo parenkam numerius tol kol tinka
 
-    //  1. Patikrinti ir ištaisyti, jeigu yra žaidėjų su tais pačiais
-    $team_numbers = arr_map($team['players'],'map_player_num');
-    if (arr_unique_values($team_numbers)) {
-        print "visi zaidejai unikalus";
-    } else {
-        print "yra neunikaliu zaideju";
+    while (!arr_unique_values($team_numbers)) {
+        for ($i = 0; $i < count($team_numbers); $i++) {
+            $team_numbers[$i] = rand(0, 99);
+            $team['players'][$i]['number'] = $team_numbers[$i];
+        }
     }
-        //  2. Patikrinti ar komandoje yra bent po 2, kiekvienos pozicijos žaidėjai. Jeigu ne, klaidą ištaisyti
-        // kažkokiam kitos rolės žaidėjui pakeitus rolę į trūkstamą.
-        // 3. Parašyti funkciją, kuri pagal kažkokią "smart logiką" suskirsto VISUS komandos žaidėjus rolėmis.
-        return $team;
+//  2. Patikrinti ar komandoje yra bent po 2, kiekvienos pozicijos žaidėjai. Jeigu ne, klaidą ištaisyti
+// kažkokiam kitos rolės žaidėjui pakeitus rolę į trūkstamą.
+// 3. Parašyti funkciją, kuri pagal kažkokią "smart logiką" suskirsto VISUS komandos žaidėjus rolėmis.
+    return $team;
 }
-
 
