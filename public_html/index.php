@@ -9,43 +9,50 @@ $form = [
         'id' => 'login-form',
     ],
     'fields' => [
-        'name' => [
-            'label' => 'Vardas ir Pavarde',
+        'number1' => [
+            'label' => 'skaicius (100-200)',
             'type' => 'text',
-            'value' => 'Jonas Smitas',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                    'validate_field_string_gap',
-                ],
-            'extra' => [
-                'attr' => [
-                    'class' => 'name-field',
-                    'placeholder' => 'Enter your name',
-                ],
-            ],
-        ],
-        'age' => [
-            'label' => 'Amzius',
-            'type' => 'text',
-            'value' => '100',
+            'value' => '150',
             'validators' =>
                 [
                     'validate_field_not_empty',
                     'validate_field_is_number',
-                    'validate_field_number_interval',
+                    'validate_field_range' => [
+                        'min' => 100,
+                        'max' => 200
+                    ],
                 ],
             'extra' => [
                 'attr' => [
                     'class' => 'age-field',
-                    'placeholder' => 'Enter your age',
+                    'placeholder' => 'Enter number',
+                ],
+            ],
+        ],
+        'number2' => [
+            'label' => 'skaicius (50-100)',
+            'type' => 'text',
+            'value' => '70',
+            'validators' =>
+                [
+                    'validate_field_not_empty',
+                    'validate_field_is_number',
+                    'validate_field_range' => [
+                        'min' => 50,
+                        'max' => 100
+                    ],
+                ],
+            'extra' => [
+                'attr' => [
+                    'class' => 'age-field',
+                    'placeholder' => 'Enter number',
                 ],
             ],
         ],
     ],
     'buttons' => [
         'save' => [
-            'title' => 'Ar as normalus?',
+            'title' => 'Ar pazysti skaicius?',
             'extra' => [
                 'attr' => [
                     'class' => 'big-button',
@@ -54,8 +61,6 @@ $form = [
         ]
     ]
 ];
-
-$fields = ['email', 'name'];
 
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
@@ -74,7 +79,7 @@ if (!empty($_POST)) {
 </head>
 <body>
 <?php include '../core/templates/form.tp1.php'; ?>
-<p><?php print $message ?></p>
+<p><?php print $message ?? '' ?></p>
 
 </body>
 </html>

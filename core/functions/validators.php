@@ -49,6 +49,7 @@ function validate_field_not_empty(string $field_value, array &$field)
 {
     if ($field_value === '') {
         $field['error'] = 'Laukelis tuscias';
+        return false;
     } else {
         return true;
     }
@@ -84,30 +85,35 @@ function validate_field_not_empty(string $field_value, array &$field)
 //}
 
 /**
- * form validation
+ * Validates form
  *
- * @param $form
- * @param $form_values
+ * @param array $form
+ * @param array $form_values
  * @return bool
  */
-function validate_form(array &$form, array $form_values): bool
+function validate_form (array &$form, array $form_values): bool
 {
     $success = true;
+    foreach ($form['fields'] as $key => &$field) {
+        // go through validators array
+        foreach ($field['validators'] as $validator_key => $validator) {
+            //check if validator is array
+            if (is_array($validator)) {
+                $function = $validator_key;
+                $params = $validator;
+            } else {
+                $function = $validator;
+            }
 
-    foreach ($form['fields'] as $field_key => &$field) {
-        $field_value = $form_values[$field_key];
-        foreach ($field['validators'] ?? [] as $validator) {
-            // validate is function exist, execute
-            if (is_callable($validator)) {
-                if ($validator($field_value, $field)) {
-                    $field['value'] = $field_value;
-                } else {
-                    $success = false;
-                    break;
-                }
+            if ($function($form_values[$key], $field, $params ?? null)) {
+                $field['value'] = $form_values[$key];
+            } else {
+                $success = false;
+                break;
             }
         }
     }
+
     return $success;
 }
 
@@ -124,18 +130,36 @@ function validate_field_is_number(string $field_value, array &$field)
         return true;
     } else {
         $field['error'] = 'laukelio verte privalo buti skaicius';
+        return false;
+    }
+}
+
+function validate_field_number_interval_50_100(string $field_value, array &$field)
+{
+    if ($field_value >= 50 && $field_value <= 100) {
+        $field['error'] = 'skiri';
+        return true;
+    } else {
+        $field['error'] = 'neskiri';
     }
 }
 
 /**
- * is in given interval
+ * validate if number is in range
  *
  * @param string $field_value
+ * @param array $field
+ * @param array $params
  * @return bool or null
  */
-function validate_field_number_interval(string $field_value)
+function validate_field_range(string $field_value, array &$field, array $params): ?bool
 {
-    if ($field_value > 18 && $field_value < 100) {
+    if(($field_value <= $params['min']) || ($field_value >= $params['max'])){
+        $field['error'] = strtr('Laukelio vertė turi būti @from iki @to', [
+            '@from' => $params['min'],
+            '@to' => $params['max']
+        ]);
+    } else {
         return true;
     }
 }
