@@ -9,18 +9,13 @@ $form = [
         'id' => 'login-form',
     ],
     'fields' => [
-        'number1' => [
-            'label' => 'skaicius (100-200)',
-            'type' => 'text',
-            'value' => '150',
+        'password' => [
+            'label' => 'password',
+            'type' => 'password',
+            'value' => 'super-kurtas-pass',
             'validators' =>
                 [
                     'validate_field_not_empty',
-                    'validate_field_is_number',
-                    'validate_field_range' => [
-                        'min' => 100,
-                        'max' => 200
-                    ],
                 ],
             'extra' => [
                 'attr' => [
@@ -29,18 +24,13 @@ $form = [
                 ],
             ],
         ],
-        'number2' => [
-            'label' => 'skaicius (50-100)',
-            'type' => 'text',
-            'value' => '70',
+        'password_repeat' => [
+            'label' => 'password-repeat',
+            'type' => 'password',
+            'value' => 'super-kurtas-pass',
             'validators' =>
                 [
                     'validate_field_not_empty',
-                    'validate_field_is_number',
-                    'validate_field_range' => [
-                        'min' => 50,
-                        'max' => 100
-                    ],
                 ],
             'extra' => [
                 'attr' => [
@@ -56,16 +46,23 @@ $form = [
             'extra' => [
                 'attr' => [
                     'class' => 'big-button',
-                ]
-            ]
+                ],
+            ],
+        ],
+    ],
+    'validators' => [
+        'validate_fields_match' => [
+            'password',
+            'password_repeat'
         ]
-    ]
+    ],
 ];
 
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
     $message = validate_form($form, $input) ? 'Gal ir normalus' : 'Neee nenormalus';
 }
+$write = array_to_file($form, DB_FILE) ? 'irase' : 'nea';
 ?>
 <!doctype html>
 <html lang="en">
@@ -79,7 +76,5 @@ if (!empty($_POST)) {
 </head>
 <body>
 <?php include '../core/templates/form.tp1.php'; ?>
-<p><?php print $message ?? '' ?></p>
-
 </body>
 </html>

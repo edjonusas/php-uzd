@@ -37,5 +37,6 @@
             <?php print $button['title'] ?>
 		</button>
     <?php endforeach; ?>
+	<span><?php print $form['error'] ?? '' ?></span>
 	<!--	End generating buttons-->
 </form>
