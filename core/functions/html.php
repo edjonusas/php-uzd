@@ -122,3 +122,23 @@ function sanitize_form_input_values(array $form): array
 //        }
 //    }
 //}
+/**
+ * create array for table template
+ *
+ * @param array $data_array
+ * @param array $headers
+ * @return array
+ */
+function create_table_array(array $data_array, array $headers): array
+{
+    $table = [];
+    foreach ($headers as $header) {
+        $table['headers'][] = $header;
+    }
+
+    foreach ($data_array as $col) {
+        $table['rows'][] = $col;
+    }
+
+    return $table;
+}

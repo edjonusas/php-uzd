@@ -221,15 +221,4 @@ function validate_field_string_gap(string $field_value): ?bool
     }
 }
 
-function validate_user_unique(string $field_value, array &$field, array $params): bool
-{
-    $data_arr = file_to_array($params['data'] ?? []);
-    // var_dump($field_value);
-    foreach ($data_arr as $key => $value) {
-        if ($value['email'] === $field_value) {
-            $field['error'] = "User $field_value already registered";
-            return false;
-        }
-    }
-    return true;
-}
+

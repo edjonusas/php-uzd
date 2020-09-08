@@ -13,9 +13,7 @@ $form = [
             'validators' =>
                 [
                     'validate_field_not_empty',
-                    'validate_user_unique' => [
-                        'data' => DB_FILE,
-                    ]
+                    'validate_user_unique',
                 ],
             'extra' => [
                 'attr' => [
@@ -85,6 +83,9 @@ if (!empty($_POST)) {
 	<title>formatron3000</title>
 </head>
 <body>
+<nav>
+	<a href="pages/users.php">Users</a>
+</nav>
 <?php include '../core/templates/form.tpl.php'; ?>
 <?php if (isset($message)) : ?>
 	<span><?php print $message; ?></span>
