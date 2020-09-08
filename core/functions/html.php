@@ -32,7 +32,7 @@ function input_attr(string $field_id, array $field): string
         'type' => $field['type'],
         'value' => $field['value'] ?? ''
     ];
-    $attributes += $field['extra']['attr'] ?? '';
+    $attributes += $field['extra']['attr'] ?? [];
 
     return html_attr($attributes);
 }
@@ -50,7 +50,7 @@ function button_attr(string $button_id, array $button): string
         'name' => 'action',
         'value' => $button_id,
     ];
-    $attributes += $button['extra']['attr'] ?? '';
+    $attributes += $button['extra']['attr'] ?? [];
 
     return html_attr($attributes);
 }
