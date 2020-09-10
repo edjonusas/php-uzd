@@ -146,7 +146,6 @@ function validate_fields_match(array $form_values, array &$form, array $params):
         $values[] = $form_values[$param];
     }
     if (count(array_unique($values)) === 1) {
-        $form['error'] = 'vaziuojam';
         return true;
     } else {
         $form['error'] = 'nesutampa password';
@@ -160,6 +159,8 @@ function validate_fields_match(array $form_values, array &$form, array $params):
 //        return false;
 //    }
 }
+
+
 
 /**
  * is numeric input error message

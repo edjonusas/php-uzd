@@ -1,15 +1,17 @@
 <?php
-require '../bootloader.php';
+
+require '../../bootloader.php';
 
 $form = [
     'attr' => [
         'method' => 'POST',
+        'id' => 'login'
     ],
     'fields' => [
-        'email' => [
-            'label' => 'Email',
-            'type' => 'email',
-            'value' => 'email@email.com',
+        'user_name' => [
+            'label' => 'User name',
+            'type' => 'text',
+            'value' => '',
             'validators' =>
                 [
                     'validate_field_not_empty',
@@ -17,24 +19,21 @@ $form = [
                 ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => 'Enter Your Email'
+                    'placeholder' => 'Enter Your User name'
                 ]
             ]
         ],
         'password' => [
             'label' => 'Password',
             'type' => 'password',
-            'value' => 'superkrutaspass',
             'validators' =>
                 [
                     'validate_field_not_empty',
                 ],
-
         ],
         'password_repeat' => [
-            'label' => 'Password repeat',
-            'type' => 'Password',
-            'value' => 'super-kurtas-pass',
+            'label' => 'Repeat Password',
+            'type' => 'password',
             'validators' =>
                 [
                     'validate_field_not_empty',
@@ -42,15 +41,15 @@ $form = [
         ],
     ],
     'buttons' => [
-        'save' => [
-            'title' => 'register',
+        'register' => [
+            'title' => 'Register',
         ],
     ],
     'validators' => [
         'validate_fields_match' => [
             'password',
             'password_repeat'
-        ]
+        ],
     ],
 ];
 
@@ -65,12 +64,12 @@ if (!empty($_POST)) {
         } else {
             $input_data[] = $input;
         }
-        $message = array_to_file($input_data, DB_FILE) ? 'Išsaugota' : 'Neišsaugota';
+        $message = array_to_file($input_data, DB_FILE) ? $form['error'] = 'Registracija sėkminga' : $form['error'] = 'Kalida, bandykite dar kartą';
+    } else {
+        $form['error'] = 'Registracija mepavyko, bandykite dar kartą';
     }
 }
 
-//$arr = file_to_array(DB_FILE);
-//var_dump($arr);
 ?>
 <!doctype html>
 <html lang="en">
@@ -79,18 +78,10 @@ if (!empty($_POST)) {
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="style.css">
-	<title>formatron3000</title>
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<nav>
-	<a href="pages/users.php">Users</a>
-	<a href="pages/apklausa.php">Apklausa</a>
-	<a href="pages/login.php">Login</a>
-</nav>
-<?php include '../core/templates/form.tpl.php'; ?>
-<?php if (isset($message)) : ?>
-	<span><?php print $message; ?></span>
-<?php endif; ?>
+<?php include '../../core/templates/form.tpl.php'; ?>
 </body>
 </html>

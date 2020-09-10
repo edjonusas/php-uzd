@@ -3,10 +3,10 @@ require '../../bootloader.php';
 
 $table_headers = ['Users emails', 'Users Passwords'];
 
-if (!empty(file_to_array(DB_FILE))) {
-    $users = file_to_array(DB_FILE);
+
+    $users = file_to_array(DB_FILE)?? [];
     $table = create_table_array($users, $table_headers);
-}
+
 ?>
 
 <!doctype html>

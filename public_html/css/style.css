@@ -1,0 +1,39 @@
+#login {
+    font-family: Arial;
+    margin: 100px auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#login>label {
+    color: #5a5a5a;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+#login input,
+#login button {
+    outline: none;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#login input {
+    color: #222222;
+    background: #eaeaea;
+}
+
+#login button {
+    margin-top: 25px;
+    padding: 17px 10px;
+    background: #4556B7;
+    color: #eaeaea;
+}

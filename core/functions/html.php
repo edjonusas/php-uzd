@@ -71,6 +71,12 @@ function select_attr(string $field_id, array $field): string
     return html_attr($attributes);
 }
 
+function radio_attr(string $field_id, array $field): string
+{
+    //foreach ($field)
+      var_dump($field);
+}
+
 /**
  * Generating option tag
  *
@@ -133,7 +139,7 @@ function create_table_array(array $data_array, array $headers): array
 {
     $table = [];
     foreach ($headers as $header) {
-        $table['headers'][] = $header;
+        $table['headers'][] = $header ?? '';
     }
 
     foreach ($data_array as $col) {
