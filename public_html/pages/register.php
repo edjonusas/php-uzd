@@ -53,20 +53,19 @@ $form = [
     ],
 ];
 
+$db = new fileDB(DB_FILE);
+
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
     if (validate_form($form, $input)) {
         unset($input['password_repeat']);
-        // if file not empty use file and add input data
-        if (!empty(file_to_array(DB_FILE))) {
-            $input_data = file_to_array(DB_FILE);
-            $input_data[] = $input;
-        } else {
-            $input_data[] = $input;
-        }
-        $message = array_to_file($input_data, DB_FILE) ? $form['error'] = 'Registracija sėkminga' : $form['error'] = 'Kalida, bandykite dar kartą';
+        $db->load();
+        $db->insertRow('users', $input);
+        $message = $db->save();
+        header('Location: login.php');
+        exit();
     } else {
-        $form['error'] = 'Registracija mepavyko, bandykite dar kartą';
+        $form['error'] = 'Registracija nepavyko, bandykite dar kartą';
     }
 }
 
