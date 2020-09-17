@@ -97,7 +97,7 @@ function validate_form(array &$form, array $form_values): bool
     // input validator
     foreach ($form['fields'] as $key => &$field) {
         // go through validators array
-        foreach ($field['validators'] as $validator_key => $validator) {
+        foreach ($field['validators'] ?? [] as $validator_key => $validator) {
             //check if validator is array
             if (is_array($validator)) {
                 $function = $validator_key;
@@ -115,7 +115,7 @@ function validate_form(array &$form, array $form_values): bool
         }
     }
     //form validator
-    foreach ($form['validators'] as $form_validator_key => $form_validator) {
+    foreach ($form['validators'] ?? [] as $form_validator_key => $form_validator) {
         if (is_array($form_validator)) {
             $form_validator_function = $form_validator_key;
             $form_validator_params = $form_validator;
@@ -159,7 +159,6 @@ function validate_fields_match(array $form_values, array &$form, array $params):
 //        return false;
 //    }
 }
-
 
 
 /**

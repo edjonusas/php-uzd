@@ -1,6 +1,7 @@
 <?php
 
 require '../../bootloader.php';
+$navigation = generate_nav();
 
 $form = [
     'attr' => [
@@ -53,6 +54,8 @@ if (!empty($_POST)) {
             'user_name' => $input['user_name'],
             'password' => $input['password']
         ];
+        header('Location: ../index.php');
+        exit();
     }
 }
 
@@ -68,6 +71,9 @@ if (!empty($_POST)) {
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<?php include '../../core/templates/form.tpl.php'; ?>
+<header>
+    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+</header>
+<?php include ROOT . '/core/templates/form.tpl.php'; ?>
 </body>
 </html>

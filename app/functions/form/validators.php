@@ -22,6 +22,28 @@ function validate_user_unique(string $field_value, array &$field): bool
 }
 
 /**
+ * is pixel position x and y  exists in DB_FILE
+ *
+ * @param array $form_values
+ * @param array $form
+ * @return bool
+ */
+function validate_pixel_unique_position(array $form_values, array &$form): bool
+{
+    unset($form_values['colour']);
+
+    $db = new FileDB(DB_FILE);
+    $db->load();
+
+    if ($db->getRowsWhere('pixels', $form_values)) {
+        $form['error'] = "Pixel already in this position";
+        return false;
+    }
+
+    return true;
+}
+
+/**
  * checking if email and password match db_file data
  *
  * @param array $form_values
@@ -36,16 +58,24 @@ function validate_login(array $form_values, array &$form): bool
         return true;
     }
     $form['error'] = 'neapvyko!';
+
     return false;
 }
 
-function is_logged()
+/**
+ * is user logged in
+ *
+ * @return bool
+ */
+function is_logged_in(): bool
 {
-    $data_arr = file_to_array(DB_FILE);
-    foreach ($data_arr as $data) {
-        if ($data['user_name'] === $_SESSION['user_name'] ?? '' && $data['password'] === $_SESSION['password'] ?? '') {
+    if (isset($_SESSION['user_name']) && isset($_SESSION['password'])) {
+        $db = new FileDB(DB_FILE);
+        $db->load();
+        if ($db->getRowsWhere('users', ['user_name' => $_SESSION['user_name'], 'password' => $_SESSION['password']])) {
             return true;
         }
     }
+
     return false;
 }

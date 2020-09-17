@@ -1,11 +1,12 @@
 <?php
 
 require '../../bootloader.php';
+$navigation = generate_nav();
 
 $form = [
     'attr' => [
         'method' => 'POST',
-        'id' => 'login'
+        'id' => 'register'
     ],
     'fields' => [
         'user_name' => [
@@ -81,6 +82,9 @@ if (!empty($_POST)) {
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<?php include '../../core/templates/form.tpl.php'; ?>
+<header>
+    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+</header>
+<?php include ROOT . '/core/templates/form.tpl.php'; ?>
 </body>
 </html>

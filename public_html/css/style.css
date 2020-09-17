@@ -1,4 +1,6 @@
-#login {
+#login,
+#register,
+#add-pixel {
     font-family: Arial;
     margin: 100px auto;
     max-width: 500px;
@@ -6,7 +8,8 @@
     flex-direction: column;
 }
 
-#login>label {
+#login > label,
+#register > label {
     color: #5a5a5a;
     font-weight: 600;
     font-size: 1.2rem;
@@ -16,7 +19,12 @@
 }
 
 #login input,
-#login button {
+#login button,
+#register input,
+#register button,
+#add-pixel input,
+#add-pixel button,
+#add-pixel select {
     outline: none;
     font-size: 1.2rem;
     box-sizing: border-box;
@@ -26,14 +34,35 @@
     border-radius: 5px;
 }
 
-#login input {
+#login input,
+#register input,
+#add-pixel input,
+#add-pixel select {
     color: #222222;
     background: #eaeaea;
 }
 
-#login button {
+#login button,
+#register button,
+#add-pixel button {
     margin-top: 25px;
     padding: 17px 10px;
     background: #4556B7;
     color: #eaeaea;
+}
+
+.wall {
+    position: relative;
+    margin: 100px auto;
+    width: 500px;
+    height: 500px;
+    background-color: #888888;
+}
+
+.pixel {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
 }

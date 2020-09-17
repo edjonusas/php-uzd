@@ -1,0 +1,117 @@
+<?php
+
+require '../../bootloader.php';
+
+if (!is_logged_in()) {
+    header('Location: login.php');
+    exit();
+}
+
+$navigation = generate_nav();
+
+$form = [
+    'attr' => [
+        'method' => 'POST',
+        'id' => 'add-pixel'
+    ],
+    'fields' => [
+        'x' => [
+            'type' => 'text',
+            'value' => '',
+            'validators' =>
+                [
+                    'validate_field_not_empty',
+                    'validate_field_is_number',
+                    'validate_field_range' => [
+                        'min' => 0,
+                        'max' => 49,
+                    ],
+                ],
+            'extra' => [
+                'attr' => [
+                    'placeholder' => 'Enter X coordinates'
+                ]
+            ]
+        ],
+        'y' => [
+            'type' => 'text',
+            'value' => '',
+            'validators' =>
+                [
+                    'validate_field_not_empty',
+                    'validate_field_is_number',
+                    'validate_field_range' => [
+                        'min' => 0,
+                        'max' => 49,
+                    ],
+                ],
+            'extra' => [
+                'attr' => [
+                    'placeholder' => 'Enter Y coordinates'
+                ]
+            ]
+        ],
+        'colour' => [
+            'type' => 'select',
+            'value' => 'red',
+            'option' => [
+                'red' => 'Red',
+                'blue' => 'Blue',
+                'green' => 'Green',
+                'black' => 'Black',
+            ],
+            'extra' => [
+                'attr' => [
+                    'class' => 'colour-selector'
+                ]
+            ]
+        ],
+
+    ],
+    'buttons' => [
+        'login' => [
+            'title' => 'Add pixel',
+        ],
+    ],
+    'validators' => [
+        'validate_pixel_unique_position' => [
+            'x',
+            'y'
+        ],
+    ],
+];
+
+$db = new fileDB(DB_FILE);
+
+if (!empty($_POST)) {
+    $input = sanitize_form_input_values($form);
+    if (validate_form($form, $input)) {
+        $db->load();
+        $db->insertRow('pixels', $input);
+        $message = $db->save();
+        //header('Location: index.php');
+        // exit();
+    } else {
+        $form['error'] = 'Klaida';
+    }
+}
+
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Add pixels</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+</header>
+<?php include ROOT . '/core/templates/form.tpl.php'; ?>
+</body>
+</html>
