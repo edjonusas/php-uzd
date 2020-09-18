@@ -1,3 +1,10 @@
+/*navigation*/
+nav {
+    display: flex;
+}
+
+
+/*forms*/
 #login,
 #register,
 #add-pixel {
@@ -51,6 +58,7 @@
     color: #eaeaea;
 }
 
+/*Wall and pixels*/
 .wall {
     position: relative;
     margin: 100px auto;

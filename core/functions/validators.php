@@ -151,13 +151,7 @@ function validate_fields_match(array $form_values, array &$form, array $params):
         $form['error'] = 'nesutampa password';
         return false;
     }
-//    if ($form_values[$params[0]] === $form_values[$params[1]]) {
-//        $form['error'] = 'vaziuojam';
-//        return true;
-//    } else {
-//        $form['error'] = 'nesutampa password';
-//        return false;
-//    }
+
 }
 
 
@@ -207,6 +201,24 @@ function validate_field_range(string $field_value, array &$field, array $params)
     } else {
         return true;
     }
+}
+
+/**
+ * validate selector value
+ *
+ * @param string $field_value
+ * @param array $field
+ * @return bool
+ */
+function validate_selector_value(string $field_value, array &$field): bool
+{
+    foreach ($field['option'] as $value => $title) {
+        if ($value === $field_value) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 /**

@@ -11,7 +11,7 @@ $form = [
     'fields' => [
         'user_name' => [
             'label' => 'User Name',
-            'type' => 'user_name',
+            'type' => 'text',
             'value' => '',
             'validators' =>
                 [

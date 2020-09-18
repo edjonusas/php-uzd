@@ -54,11 +54,15 @@ $form = [
         'colour' => [
             'type' => 'select',
             'value' => 'red',
+	        'validators' => [
+	        		'validate_selector_value',
+	        ],
             'option' => [
                 'red' => 'Red',
                 'blue' => 'Blue',
                 'green' => 'Green',
                 'black' => 'Black',
+	            'yellow' => 'Yellow',
             ],
             'extra' => [
                 'attr' => [
@@ -86,6 +90,7 @@ $db = new fileDB(DB_FILE);
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
     if (validate_form($form, $input)) {
+        $input['user_name'] = $_SESSION['user_name'];
         $db->load();
         $db->insertRow('pixels', $input);
         $message = $db->save();
