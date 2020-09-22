@@ -15,3 +15,19 @@ function logout($redirect = false)
         exit;
     }
 }
+
+/**
+ * is user logged in
+ *
+ * @return bool
+ */
+function is_logged_in(): bool
+{
+    if (isset($_SESSION['user_name']) && isset($_SESSION['password'])) {
+        if (App\App::$db->getRowsWhere('users', ['user_name' => $_SESSION['user_name'], 'password' => $_SESSION['password']])) {
+            return true;
+        }
+    }
+
+    return false;
+}

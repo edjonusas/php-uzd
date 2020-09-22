@@ -54,15 +54,13 @@ $form = [
     ],
 ];
 
-$db = new fileDB(DB_FILE);
+
 
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
     if (validate_form($form, $input)) {
         unset($input['password_repeat']);
-        $db->load();
-        $db->insertRow('users', $input);
-        $message = $db->save();
+        App\App::$db->insertRow('users', $input);
         header('Location: login.php');
         exit();
     } else {

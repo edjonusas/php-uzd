@@ -46,16 +46,13 @@ $form = [
     ],
 ];
 
+
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
     if (validate_form($form, $input)) {
-
-        $_SESSION = [
-            'user_name' => $input['user_name'],
-            'password' => $input['password']
-        ];
-        header('Location: ../index.php');
-        exit();
+        App\App::$session->login($input['user_name'],$input['password']);
+        header('Location: my.php');
+        exit;
     }
 }
 

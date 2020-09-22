@@ -71,10 +71,18 @@ function select_attr(string $field_id, array $field): string
     return html_attr($attributes);
 }
 
-function radio_attr(string $field_id, array $field): string
+function range_attr(string $field_id, array $field): string
 {
-    //foreach ($field)
-      var_dump($field);
+    $attributes = [
+        'name' => $field_id,
+        'type' => $field['type'],
+        'value' => $field['value'] ?? '',
+        'min' => $field['min_value'],
+        'max' => $field['max_value'],
+    ];
+    $attributes += $field['extra']['attr'] ?? [];
+
+    return html_attr($attributes);
 }
 
 /**

@@ -1,5 +1,5 @@
 <?php
 require('../../bootloader.php');
-$nav = generate_nav();
-logout($redirect = true);
-?>
+use App\App;
+App::$session->logout('login.php');
+

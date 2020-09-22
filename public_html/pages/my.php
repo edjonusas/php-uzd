@@ -1,17 +1,18 @@
 <?php
+
+use App\App;
+
 require '../../bootloader.php';
 
-if (!is_logged_in()) {
+if (!App::$session->loginFromCookie()) {
     header('Location: login.php');
     exit();
 }
 $UserPixels = ['user_name' => $_SESSION['user_name']];
 $navigation = generate_nav();
 
-$db = new FileDB(DB_FILE);
-$db->load();
-if ($db->tableExists('pixels')) {
-    $pixels = $db->getRowsWhere('pixels', $UserPixels);
+if (App::$db->tableExists('pixels')) {
+    $pixels = App::$db->getRowsWhere('pixels', $UserPixels);
 }
 
 ?>
@@ -33,8 +34,10 @@ if ($db->tableExists('pixels')) {
 <div class="wall">
     <?php foreach ($pixels ?? [] as $pixel) : ?>
 		<span class="pixel"
-		      style=" top: <?php print $pixel['y'] * 10 ?>px;
-				      left: <?php print $pixel['x'] * 10 ?>px;
+		      style=" bottom: <?php print $pixel['y'] ?>px;
+				      left: <?php print $pixel['x'] ?>px;
+				      width: <?php print $pixel['pixel_size'] ?>px;
+				      height: <?php print $pixel['pixel_size'] ?>px;
 				      background-color: <?php print $pixel['colour'] ?>;">
 		</span>
     <?php endforeach; ?>

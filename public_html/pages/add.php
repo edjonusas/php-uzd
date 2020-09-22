@@ -1,8 +1,10 @@
 <?php
 
+use App\App;
+
 require '../../bootloader.php';
 
-if (!is_logged_in()) {
+if (!App::$session) {
     header('Location: login.php');
     exit();
 }
@@ -24,7 +26,7 @@ $form = [
                     'validate_field_is_number',
                     'validate_field_range' => [
                         'min' => 0,
-                        'max' => 49,
+                        'max' => 499,
                     ],
                 ],
             'extra' => [
@@ -42,7 +44,7 @@ $form = [
                     'validate_field_is_number',
                     'validate_field_range' => [
                         'min' => 0,
-                        'max' => 49,
+                        'max' => 499,
                     ],
                 ],
             'extra' => [
@@ -51,18 +53,19 @@ $form = [
                 ]
             ]
         ],
+
         'colour' => [
             'type' => 'select',
             'value' => 'red',
-	        'validators' => [
-	        		'validate_selector_value',
-	        ],
+            'validators' => [
+                'validate_selector_value',
+            ],
             'option' => [
                 'red' => 'Red',
                 'blue' => 'Blue',
                 'green' => 'Green',
                 'black' => 'Black',
-	            'yellow' => 'Yellow',
+                'yellow' => 'Yellow',
             ],
             'extra' => [
                 'attr' => [
@@ -70,8 +73,24 @@ $form = [
                 ]
             ]
         ],
-
+        'pixel_size' => [
+            'label' => 'Pixel size',
+            'type' => 'range',
+            'value' => '10',
+            'min_value' => '1',
+            'max_value' => '20',
+            'validators' =>
+                [
+                    'validate_field_not_empty',
+                    'validate_field_is_number',
+                    'validate_field_range' => [
+                        'min' => 1,
+                        'max' => 20,
+                    ],
+                ],
+        ],
     ],
+
     'buttons' => [
         'login' => [
             'title' => 'Add pixel',
@@ -85,15 +104,14 @@ $form = [
     ],
 ];
 
-$db = new fileDB(DB_FILE);
+
 
 if (!empty($_POST)) {
     $input = sanitize_form_input_values($form);
     if (validate_form($form, $input)) {
         $input['user_name'] = $_SESSION['user_name'];
-        $db->load();
-        $db->insertRow('pixels', $input);
-        $message = $db->save();
+        App::$db->insertRow('pixels', $input);
+        //$message = $db->save();
         //header('Location: index.php');
         // exit();
     } else {

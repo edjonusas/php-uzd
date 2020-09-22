@@ -1,8 +1,20 @@
 /*navigation*/
 nav {
     display: flex;
+    justify-content: center;
 }
 
+nav > div {
+    margin: 20px 10px;
+}
+
+nav > div > a {
+    font-family: Arial;
+    font-weight: 600;
+    color: #222222;
+    font-size: 20px;
+    text-decoration: none;
+}
 
 /*forms*/
 #login,
@@ -58,6 +70,19 @@ nav {
     color: #eaeaea;
 }
 
+label {
+font-size: 18px;
+    color: #222222;
+    margin: 15px 0 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#add-pixel input[type=range] {
+    padding: 10px 0;
+    margin: 0;
+}
+
 /*Wall and pixels*/
 .wall {
     position: relative;
@@ -70,7 +95,4 @@ nav {
 .pixel {
     position: absolute;
     display: block;
-    width: 10px;
-    height: 10px;
-    background-color: red;
 }

@@ -2,11 +2,8 @@
 
 require '../bootloader.php';
 
-$db = new FileDB(DB_FILE);
-$db->load();
-$db->createTable('users');
-$db->createTable('pixels');
-$db->save();
+App\App::$db->createTable('users');
+App\App::$db->createTable('pixels');
 
 ?>
 
