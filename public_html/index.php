@@ -1,9 +1,19 @@
 <?php
+
+use App\Pixels\Pixel;
+
 require '../bootloader.php';
+$pixel = new Pixel();
+//$pixel_data = \App\App::$db->getRowWhere('pixels');
+
+//$pixel->setX(23);
+//$pixel->setY(123);
+//$pixel->setColor('red');
+//$pixel->setUserName('Edd');
+//
+//var_dump($pixel);
 
 
-var_dump(\App\App::$session);
-var_dump($_SESSION);
 
 $navigation = generate_nav();
 
