@@ -4,7 +4,7 @@ use App\App;
 
 require '../../bootloader.php';
 
-if (!App::$session) {
+if (!App::$session->getUser()) {
     header('Location: login.php');
     exit();
 }

@@ -12,7 +12,7 @@ use App\App;
  */
 class Session
 {
-    private array $user;
+    private ?array $user = null;
 
     public function __construct()
     {
@@ -26,7 +26,6 @@ class Session
     {
         if (isset($_SESSION['user_name']) && isset($_SESSION['password'])) {
             $this->login($_SESSION['user_name'], $_SESSION['password']);
-
             return true;
         }
 
@@ -45,10 +44,8 @@ class Session
             $_SESSION['user_name'] = $user_name;
             $_SESSION['password'] = $password;
             $this->user = $user;
-            var_dump($user);
             return true;
         }
-
         return false;
     }
 

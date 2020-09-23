@@ -2,7 +2,8 @@
 require '../bootloader.php';
 
 
-
+var_dump(\App\App::$session);
+var_dump($_SESSION);
 
 $navigation = generate_nav();
 

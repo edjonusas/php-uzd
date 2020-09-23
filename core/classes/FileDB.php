@@ -231,14 +231,14 @@ class FileDB
         return $results;
     }
 
-    public function getRowWhere(string $table_name, array $conditions): array
+    public function getRowWhere(string $table_name, array $conditions): ?array
     {
-        $results = [];
         if ($this->tableExists($table_name)) {
             foreach ($this->data[$table_name] as $row_key => $row) {
                 $success = true;
                 foreach ($conditions as $condition_key => $condition) {
                     if ($row[$condition_key] !== $condition) {
+
                         $success = false;
                         break;
                     }
@@ -246,6 +246,6 @@ class FileDB
                 if ($success) return $row;
             }
         }
-        return [];
+        return null;
     }
 }

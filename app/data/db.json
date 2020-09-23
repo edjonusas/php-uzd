@@ -1,1 +1,101 @@
-{"users":[{"user_name":"Giedrius","password":"eee"},{"user_name":"Edvinas","password":"eee"},{"user_name":"Jonas","password":"jjj"},{"user_name":"Tadas","password":"ttt"},{"user_name":"Inga","password":"iii"},{"user_name":"Suzana","password":"sss"},{"user_name":"Marija","password":"mmm"},{"user_name":"Petras","password":"ppp"}],"pixels":[{"x":"111","y":"444","colour":"red","pixel_size":"10","user_name":"Edvinas"},{"x":"111","y":"3","colour":"red","pixel_size":"10","user_name":"Edvinas"},{"x":"1","y":"3","colour":"red","pixel_size":"20","user_name":"Edvinas"},{"x":"1","y":"444","colour":"red","pixel_size":"20","user_name":"Edvinas"},{"x":"1","y":"222","colour":"red","pixel_size":"20","user_name":"Edvinas"},{"x":"457","y":"222","colour":"red","pixel_size":"20","user_name":"Edvinas"},{"x":"200","y":"200","colour":"yellow","pixel_size":"10","user_name":"Edvinas"},{"x":"23","y":"23","colour":"green","pixel_size":"10","user_name":"Edvinas"},{"x":"456","y":"334","colour":"red","pixel_size":"10","user_name":"Edvinas"}]}
+{
+  "users": [
+    {
+      "user_name": "Giedrius",
+      "password": "eee"
+    },
+    {
+      "user_name": "Edvinas",
+      "password": "eee"
+    },
+    {
+      "user_name": "Jonas",
+      "password": "jjj"
+    },
+    {
+      "user_name": "Tadas",
+      "password": "ttt"
+    },
+    {
+      "user_name": "Inga",
+      "password": "iii"
+    },
+    {
+      "user_name": "Suzana",
+      "password": "sss"
+    },
+    {
+      "user_name": "Marija",
+      "password": "mmm"
+    },
+    {
+      "user_name": "Petras",
+      "password": "ppp"
+    }
+  ],
+  "pixels": [
+    {
+      "x": "111",
+      "y": "444",
+      "colour": "red",
+      "pixel_size": "10",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "111",
+      "y": "3",
+      "colour": "red",
+      "pixel_size": "10",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "1",
+      "y": "3",
+      "colour": "red",
+      "pixel_size": "20",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "1",
+      "y": "444",
+      "colour": "red",
+      "pixel_size": "20",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "1",
+      "y": "222",
+      "colour": "red",
+      "pixel_size": "20",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "457",
+      "y": "222",
+      "colour": "red",
+      "pixel_size": "20",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "200",
+      "y": "200",
+      "colour": "yellow",
+      "pixel_size": "10",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "23",
+      "y": "23",
+      "colour": "green",
+      "pixel_size": "10",
+      "user_name": "Edvinas"
+    },
+    {
+      "x": "456",
+      "y": "334",
+      "colour": "red",
+      "pixel_size": "10",
+      "user_name": "Edvinas"
+    }
+  ]
+}
