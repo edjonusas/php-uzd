@@ -2,28 +2,11 @@
 
 namespace App\Pixels;
 
-class Pixel
+use Core\DataHolder\DataHolder;
+
+class Pixel extends DataHolder
 {
-    private array $data;
-    private array $properties = ['x', 'y', 'colour', 'user_name'];
-
-    public function _getData(): ?array
-    {
-        return [
-            'x' => $this->getX(),
-            'y' => $this->getY(),
-            'colour' => $this->getColor(),
-            'user_name' => $this->getUserName()
-        ];
-    }
-
-    public function _setData(array $data)
-    {
-        $this->setX($data['x']);
-        $this->setY($data['y']);
-        $this->setColor($data['colour']);
-        $this->setUserName($data['user_name']);
-    }
+    protected array $properties = ['x', 'y', 'colour', 'pixel_size', 'user_name'];
 
     public function getX(): ?int
     {
@@ -35,34 +18,43 @@ class Pixel
         return $this->data['y'] ?? null;
     }
 
-    public function getColor(): ?string
-    {
-        return $this->data['colour'] ?? null;
-    }
-
     public function getUserName(): ?string
     {
         return $this->data['user_name'] ?? null;
     }
 
-    public function setX(int $X)
+    public function getSize(): ?int
     {
-        $this->data['x'] = $X;
+        return $this->data['pixel_size'] ?? null;
     }
 
-    public function setY(int $X)
+    public function getColour(): ?string
     {
-        $this->data['y'] = $X;
+        return $this->data['colour'] ?? null;
     }
 
-    public function setColor(string $color)
+    public function setX(?int $x)
+    {
+        $this->data['x'] = $x;
+    }
+
+    public function setSize(?int $size)
+    {
+        $this->data['pixel_size'] = $size;
+    }
+
+    public function setY(?int $y)
+    {
+        $this->data['y'] = $y;
+    }
+
+    public function setColour(?string $color)
     {
         $this->data['colour'] = $color;
     }
 
-    public function setUserName(string $user_name)
+    public function setUserName(?string $user_name)
     {
         $this->data['user_name'] = $user_name;
     }
-
 }

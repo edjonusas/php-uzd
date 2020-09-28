@@ -1,15 +1,16 @@
 <?php
+require '../../bootloader.php';
 
 use App\App;
-
-require '../../bootloader.php';
+use App\Pixels\Pixel;
+use Core\Views\Form;
+use Core\Views\Navigation;
 
 if (!App::$session->getUser()) {
     header('Location: login.php');
     exit();
 }
 
-$navigation = generate_nav();
 
 $form = [
     'attr' => [
@@ -104,20 +105,19 @@ $form = [
     ],
 ];
 
+$navigation = new Navigation();
+$add_form = new Form($form);
 
-
-if (!empty($_POST)) {
-    $input = sanitize_form_input_values($form);
-    if (validate_form($form, $input)) {
-        $input['user_name'] = $_SESSION['user_name'];
-        App::$db->insertRow('pixels', $input);
-        //$message = $db->save();
-        //header('Location: index.php');
-        // exit();
-    } else {
-        $form['error'] = 'Klaida';
+if ($add_form->isSubmitted()) {
+    if ($add_form->validate()) {
+        $pixel = new Pixel($add_form->getSubmitData());
+        $pixel->setUserName(App::$session->getUser()['user_name']);
+        App::$db->insertRow('pixels', $pixel->_getData());
+        header('Location: my.php');
     }
 }
+
+//var_dump($form);
 
 ?>
 
@@ -133,8 +133,8 @@ if (!empty($_POST)) {
 </head>
 <body>
 <header>
-    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+    <?php print $navigation->render(); ?>
 </header>
-<?php include ROOT . '/core/templates/form.tpl.php'; ?>
+<?php print $add_form->render(); ?>
 </body>
 </html>

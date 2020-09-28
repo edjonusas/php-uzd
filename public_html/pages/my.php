@@ -1,6 +1,9 @@
 <?php
 
 use App\App;
+use Core\View;
+use Core\Views\Navigation;
+
 
 require '../../bootloader.php';
 
@@ -9,11 +12,13 @@ if (!App::$session->getUser()) {
     exit();
 }
 $UserPixels = ['user_name' => $_SESSION['user_name']];
-$navigation = generate_nav();
+
 
 if (App::$db->tableExists('pixels')) {
     $pixels = App::$db->getRowsWhere('pixels', $UserPixels);
 }
+
+$navigation = new Navigation();
 
 ?>
 
@@ -29,7 +34,7 @@ if (App::$db->tableExists('pixels')) {
 </head>
 <body>
 <header>
-    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+    <?php print $navigation->render(); ?>
 </header>
 <div class="wall">
     <?php foreach ($pixels ?? [] as $pixel) : ?>

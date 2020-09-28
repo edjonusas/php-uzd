@@ -1,25 +1,16 @@
 <?php
 
-use App\Pixels\Pixel;
+
+use Core\View;
+use Core\Views\Navigation;
 
 require '../bootloader.php';
-$pixel = new Pixel();
-//$pixel_data = \App\App::$db->getRowWhere('pixels');
-
-//$pixel->setX(23);
-//$pixel->setY(123);
-//$pixel->setColor('red');
-//$pixel->setUserName('Edd');
-//
-//var_dump($pixel);
-
-
-
-$navigation = generate_nav();
 
 if (App\App::$db->tableExists('pixels')) {
     $pixels = App\App::$db->getRowsWhere('pixels', []);
 }
+
+$navigation = new Navigation();
 
 ?>
 
@@ -35,7 +26,7 @@ if (App\App::$db->tableExists('pixels')) {
 </head>
 <body>
 <header>
-    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+    <?php print $navigation->render();?>
 </header>
 <div class="wall">
     <?php foreach ($pixels ?? [] as $pixel) : ?>

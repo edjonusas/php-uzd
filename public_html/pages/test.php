@@ -1,9 +1,18 @@
 <?php
 
+
+use Core\Game;
+use Core\Sniper;
+
 require '../../bootloader.php';
 
-$player = new Player();
-$player->heal();
+$game = new Game();
 
-var_dump($player);
+$game->addPlayerToTeamA(new Sniper('Artiom'));
+$game->addPlayerToTeamA(new Sniper('Anna'));
+$game->addPlayerToTeamB(new Sniper('Melnik'));
+$game->addPlayerToTeamB(new Sniper('Miller'));
 
+$game->goTeamA();
+
+var_dump($game);

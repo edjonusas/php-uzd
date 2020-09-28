@@ -2,7 +2,7 @@
 
 require '../../bootloader.php';
 
-$form = [
+$data = [
     'attr' => [
         'method' => 'POST',
     ],
@@ -25,8 +25,8 @@ $form = [
 ];
 
 if (!empty($_POST)) {
-    $input = sanitize_form_input_values($form);
-    if (validate_form($form, $input)) {
+    $input = sanitize_form_input_values($data);
+    if (validate_form($data, $input)) {
         // if file not empty use file and add input data
         if (!empty(file_to_array(DB_RADIO))) {
             $input_data = file_to_array(DB_RADIO);

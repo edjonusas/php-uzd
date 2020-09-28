@@ -5,7 +5,7 @@ $table_headers = ['Users emails', 'Users Passwords'];
 
 
     $users = file_to_array(DB_FILE)?? [];
-    $table = create_table_array($users, $table_headers);
+    $data = create_table_array($users, $table_headers);
 
 ?>
 

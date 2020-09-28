@@ -1,7 +1,10 @@
 <?php
 
+use Core\Views\Form;
+use Core\Views\Navigation;
+
 require '../../bootloader.php';
-$navigation = generate_nav();
+//$navigation = generate_nav();
 
 $form = [
     'attr' => [
@@ -47,14 +50,26 @@ $form = [
 ];
 
 
-if (!empty($_POST)) {
-    $input = sanitize_form_input_values($form);
-    if (validate_form($form, $input)) {
-        App\App::$session->login($input['user_name'],$input['password']);
+//if (!empty($_POST)) {
+//    $input = sanitize_form_input_values($form);
+//    if (validate_form($form, $input)) {
+//        App\App::$session->login($input['user_name'], $input['password']);
+//        header('Location: my.php');
+//        exit;
+//    }
+//}
+
+$navigation = new Navigation();
+$login = new Form($form);
+
+if ($login->isSubmitted()) {
+    if ($login->validate()) {
+        App\App::$session->login($login->getSubmitData()['user_name'], $login->getSubmitData()['password']);
         header('Location: my.php');
-        exit;
     }
 }
+
+var_dump($form);
 
 ?>
 <!doctype html>
@@ -69,8 +84,8 @@ if (!empty($_POST)) {
 </head>
 <body>
 <header>
-    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+    <?php print $navigation->render(); ?>
 </header>
-<?php include ROOT . '/core/templates/form.tpl.php'; ?>
+<?php print $login->render(); ?>
 </body>
 </html>

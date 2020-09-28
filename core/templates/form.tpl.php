@@ -1,7 +1,7 @@
-<form <?php print html_attr($form['attr']); ?>>
+<form <?php print html_attr($data['attr']); ?>>
 
 	<!-- Generating fields-->
-    <?php foreach ($form['fields'] ?? [] as $field_id => $field): ?>
+    <?php foreach ($data['fields'] ?? [] as $field_id => $field): ?>
 		<!-- label start -->
         <?php if (isset($field['label'])) : ?>
 			<label>
@@ -35,11 +35,13 @@
 	<!--	End generating fields-->
 
 	<!-- Generating buttons-->
-    <?php foreach ($form['buttons'] ?? [] as $button_id => $button): ?>
+    <?php foreach ($data['buttons'] ?? [] as $button_id => $button): ?>
 		<button <?php print button_attr($button_id, $button); ?>>
             <?php print $button['title'] ?>
 		</button>
     <?php endforeach; ?>
-	<span><?php print $form['error'] ?? '' ?></span>
+    <?php if (isset($data['error'])): ?>
+		<span><?php print $data['error'] ?></span>
+    <?php endif; ?>
 	<!--	End generating buttons-->
 </form>

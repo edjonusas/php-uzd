@@ -1,7 +1,11 @@
 <?php
 
+use App\Users\User;
+use Core\View;
+use Core\Views\Form;
+use Core\Views\Navigation;
+
 require '../../bootloader.php';
-$navigation = generate_nav();
 
 $form = [
     'attr' => [
@@ -56,17 +60,30 @@ $form = [
 
 
 
-if (!empty($_POST)) {
-    $input = sanitize_form_input_values($form);
-    if (validate_form($form, $input)) {
-        unset($input['password_repeat']);
-        App\App::$db->insertRow('users', $input);
+//if (!empty($_POST)) {
+//    $input = sanitize_form_input_values($form);
+//    if (validate_form($form, $input)) {
+//        $user = new User($input);
+//        App\App::$db->insertRow('users', $user->_getData());
+//        header('Location: login.php');
+//        exit();
+//    } else {
+//        $form['error'] = 'Registracija nepavyko, bandykite dar kartą';
+//    }
+//}
+
+$navigation = new Navigation();
+$register = new Form($form);
+
+if ($register->isSubmitted()) {
+    if ($register->validate()) {
+        $user = new User($register->getSubmitData());
+        App\App::$db->insertRow('users', $user->_getData());
         header('Location: login.php');
         exit();
-    } else {
-        $form['error'] = 'Registracija nepavyko, bandykite dar kartą';
     }
 }
+
 
 ?>
 <!doctype html>
@@ -81,8 +98,8 @@ if (!empty($_POST)) {
 </head>
 <body>
 <header>
-    <?php include ROOT . '/core/templates/nav.tpl.php'; ?>
+    <?php print $navigation->render();?>
 </header>
-<?php include ROOT . '/core/templates/form.tpl.php'; ?>
+<?php print $register->render();?>
 </body>
 </html>
