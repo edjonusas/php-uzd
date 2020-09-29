@@ -1,6 +1,8 @@
 <?php
 
 
+use App\Views\Pages\BasePage;
+use App\Views\Pages\IndexPage;
 use Core\View;
 use Core\Views\Navigation;
 
@@ -12,6 +14,8 @@ if (App\App::$db->tableExists('pixels')) {
 
 $navigation = new Navigation();
 
+$indexPage = new IndexPage();
+print $indexPage->render();
 ?>
 
 <!doctype html>

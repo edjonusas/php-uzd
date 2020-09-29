@@ -6,7 +6,7 @@ use Exception;
 
 class View
 {
-    protected $data;
+    protected array $data;
 
     public function __construct($data = [])
     {
