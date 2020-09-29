@@ -20,16 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/AddForm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/form/validators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/classes/Views/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/classes/Views/Form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Views/Forms/AddForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Views/Forms/AddForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +145,7 @@
       <workItem from="1600679013499" duration="5015000" />
       <workItem from="1600699004500" duration="19105000" />
       <workItem from="1601014091220" duration="16527000" />
-      <workItem from="1601272988405" duration="37052000" />
+      <workItem from="1601272988405" duration="38004000" />
     </task>
     <servers />
   </component>
