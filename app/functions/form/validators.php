@@ -54,11 +54,6 @@ function validate_user_unique(string $field_value, array &$field): bool
 function validate_pixel_unique_position(array $form_values, array &$form)
 {
 
-    if (!is_numeric($form_values['x']) || !is_numeric($form_values['y'])) {
-        $form['error'] = 'Iveskite skaicius';
-        return false;
-    }
-
     $pixels = App\App::$db->getRowsWhere('pixels', []);
     foreach ($pixels as $pixel) {
 

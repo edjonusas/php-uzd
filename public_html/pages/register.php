@@ -1,79 +1,13 @@
 <?php
 
 use App\Users\User;
-use Core\View;
-use Core\Views\Form;
+use App\Views\Forms\RegisterForm;
 use Core\Views\Navigation;
 
 require '../../bootloader.php';
 
-$form = [
-    'attr' => [
-        'method' => 'POST',
-        'id' => 'register'
-    ],
-    'fields' => [
-        'user_name' => [
-            'label' => 'User name',
-            'type' => 'text',
-            'value' => '',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                    'validate_user_unique',
-                ],
-            'extra' => [
-                'attr' => [
-                    'placeholder' => 'Enter Your User name'
-                ]
-            ]
-        ],
-        'password' => [
-            'label' => 'Password',
-            'type' => 'password',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                ],
-        ],
-        'password_repeat' => [
-            'label' => 'Repeat Password',
-            'type' => 'password',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                ],
-        ],
-    ],
-    'buttons' => [
-        'register' => [
-            'title' => 'Register',
-        ],
-    ],
-    'validators' => [
-        'validate_fields_match' => [
-            'password',
-            'password_repeat'
-        ],
-    ],
-];
-
-
-
-//if (!empty($_POST)) {
-//    $input = sanitize_form_input_values($form);
-//    if (validate_form($form, $input)) {
-//        $user = new User($input);
-//        App\App::$db->insertRow('users', $user->_getData());
-//        header('Location: login.php');
-//        exit();
-//    } else {
-//        $form['error'] = 'Registracija nepavyko, bandykite dar kartą';
-//    }
-//}
-
 $navigation = new Navigation();
-$register = new Form($form);
+$register = new RegisterForm();
 
 if ($register->isSubmitted()) {
     if ($register->validate()) {
@@ -98,8 +32,8 @@ if ($register->isSubmitted()) {
 </head>
 <body>
 <header>
-    <?php print $navigation->render();?>
+    <?php print $navigation->render(); ?>
 </header>
-<?php print $register->render();?>
+<?php print $register->render(); ?>
 </body>
 </html>

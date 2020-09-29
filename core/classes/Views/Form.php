@@ -68,17 +68,20 @@ class Form extends \Core\Abstracts\Views\Form
                 }
             }
         }
-        //form validator
-        foreach ($this->data['validators'] ?? [] as $form_validator_key => $form_validator) {
-            if (is_array($form_validator)) {
-                $form_validator_function = $form_validator_key;
-                $form_validator_params = $form_validator;
-            } else {
-                $form_validator_function = $form_validator;
-            }
-            if (!$form_validator_function($this->getSubmitData(), $this->data, $form_validator_params ?? null)) {
-                $success = false;
-                break;
+        if ($success) {
+
+            //form validator
+            foreach ($this->data['validators'] ?? [] as $form_validator_key => $form_validator) {
+                if (is_array($form_validator)) {
+                    $form_validator_function = $form_validator_key;
+                    $form_validator_params = $form_validator;
+                } else {
+                    $form_validator_function = $form_validator;
+                }
+                if (!$form_validator_function($this->getSubmitData(), $this->data, $form_validator_params ?? null)) {
+                    $success = false;
+                    break;
+                }
             }
         }
 

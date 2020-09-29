@@ -1,66 +1,13 @@
 <?php
 
+use App\Views\Forms\LoginForm;
 use Core\Views\Form;
 use Core\Views\Navigation;
 
 require '../../bootloader.php';
-//$navigation = generate_nav();
-
-$form = [
-    'attr' => [
-        'method' => 'POST',
-        'id' => 'login'
-    ],
-    'fields' => [
-        'user_name' => [
-            'label' => 'User Name',
-            'type' => 'text',
-            'value' => '',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                ],
-            'extra' => [
-                'attr' => [
-                    'placeholder' => 'Enter Your User Name'
-                ]
-            ]
-        ],
-        'password' => [
-            'label' => 'Password',
-            'type' => 'password',
-            'value' => '',
-            'validators' =>
-                [
-                    'validate_field_not_empty',
-                ],
-        ],
-    ],
-    'buttons' => [
-        'login' => [
-            'title' => 'Login',
-        ],
-    ],
-    'validators' => [
-        'validate_login' => [
-            'user_name',
-            'password'
-        ]
-    ],
-];
-
-
-//if (!empty($_POST)) {
-//    $input = sanitize_form_input_values($form);
-//    if (validate_form($form, $input)) {
-//        App\App::$session->login($input['user_name'], $input['password']);
-//        header('Location: my.php');
-//        exit;
-//    }
-//}
 
 $navigation = new Navigation();
-$login = new Form($form);
+$login = new LoginForm();
 
 if ($login->isSubmitted()) {
     if ($login->validate()) {
@@ -68,8 +15,6 @@ if ($login->isSubmitted()) {
         header('Location: my.php');
     }
 }
-
-var_dump($form);
 
 ?>
 <!doctype html>

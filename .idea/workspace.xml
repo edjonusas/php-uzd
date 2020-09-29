@@ -20,30 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/classes/Users/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/Abstracts/Views/Form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/DataHolder/DataHolder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/Game.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/Sniper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/View.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/Views/Form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/classes/Views/Navigation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/AddForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Pixels/Pixel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Pixels/Pixel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/form/validators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/functions/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/validators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/form.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/form.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/nav.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/nav.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/table.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/table.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/classes/Views/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/classes/Views/Form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/apklausa.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/apklausa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/my.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/my.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +151,7 @@
       <workItem from="1600679013499" duration="5015000" />
       <workItem from="1600699004500" duration="19105000" />
       <workItem from="1601014091220" duration="16527000" />
-      <workItem from="1601272988405" duration="27222000" />
+      <workItem from="1601272988405" duration="37052000" />
     </task>
     <servers />
   </component>
@@ -306,10 +292,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601286960967" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600928359376">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601362023740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600928359376" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601362023740" />
     <state x="689" y="234" width="672" height="705" key="search.everywhere.popup/97.0.1823.1080@97.0.1823.1080" timestamp="1599673367420" />
   </component>
 </project>
