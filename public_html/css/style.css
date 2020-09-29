@@ -1,4 +1,8 @@
 /*navigation*/
+body {
+    font-family: Arial, sans-serif;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -9,7 +13,6 @@ nav > div {
 }
 
 nav > div > a {
-    font-family: Arial;
     font-weight: 600;
     color: #222222;
     font-size: 20px;
@@ -20,7 +23,6 @@ nav > div > a {
 #login,
 #register,
 #add-pixel {
-    font-family: Arial;
     margin: 100px auto;
     max-width: 500px;
     display: flex;
@@ -71,7 +73,7 @@ nav > div > a {
 }
 
 label {
-font-size: 18px;
+    font-size: 18px;
     color: #222222;
     margin: 15px 0 5px;
     display: flex;

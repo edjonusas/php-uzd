@@ -9,8 +9,13 @@ $login = new LoginForm();
 
 if ($login->isSubmitted()) {
     if ($login->validate()) {
-        App\App::$session->login($login->getSubmitData()['user_name'], $login->getSubmitData()['password']);
-        header('Location: my.php');
+        if (App\App::$session->login($login->getSubmitData()['user_name'], $login->getSubmitData()['password'])) {
+            header('Location: my.php');
+        } else {
+            $login->addError('Wrong user name or password');
+        }
+    } else {
+        $login->addError('Fill the login form');
     }
 }
 

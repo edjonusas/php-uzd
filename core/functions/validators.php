@@ -17,53 +17,6 @@ function validate_field_not_empty(string $field_value, array &$field)
     }
 }
 
-///**
-// * Validates form
-// *
-// * @param array $form
-// * @param array $form_values
-// * @return bool
-// */
-//function validate_form(array &$form, array $form_values): bool
-//{
-//    $success = true;
-//    // input validator
-//    foreach ($form['fields'] as $key => &$field) {
-//        // go through validators array
-//        foreach ($field['validators'] ?? [] as $validator_key => $validator) {
-//            //check if validator is array
-//            if (is_array($validator)) {
-//                $function = $validator_key;
-//                $params = $validator;
-//            } else {
-//                $function = $validator;
-//            }
-//
-//            if ($function($form_values[$key], $field, $params ?? null)) {
-//                $field['value'] = $form_values[$key];
-//            } else {
-//                $success = false;
-//                break;
-//            }
-//        }
-//    }
-//    //form validator
-//    foreach ($form['validators'] ?? [] as $form_validator_key => $form_validator) {
-//        if (is_array($form_validator)) {
-//            $form_validator_function = $form_validator_key;
-//            $form_validator_params = $form_validator;
-//        } else {
-//            $form_validator_function = $form_validator;
-//        }
-//        if (!$form_validator_function($form_values, $form, $form_validator_params ?? null)) {
-//            $success = false;
-//            break;
-//        }
-//    }
-//
-//    return $success;
-//}
-
 /**
  *  validate password match
  *

@@ -120,22 +120,6 @@ function sanitize_form_input_values(array $form): array
     return filter_input_array(INPUT_POST, $filter_parameters);
 }
 
-///**
-// * empty input error message
-// *
-// * @param $form
-// * @param $form_values
-// */
-//function validate_form(array &$form, array $form_values)
-//{
-//    foreach ($form['fields'] as $key => &$field) {
-//        if ($form_values[$key] === '') {
-//            $field['error'] = 'palikote tuscia laukeli';
-//        } else {
-//            $field['value'] = $form_values[$key];
-//        }
-//    }
-//}
 /**
  * create array for table template
  *

@@ -112,4 +112,8 @@ class Form extends \Core\Abstracts\Views\Form
 
         return $_POST;
     }
+
+    public function addError(string $error) {
+        $this->data['error'] = $error;
+    }
 }

@@ -21,15 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Views/Pages/BasePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Views/Pages/BasePage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/content/Index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/content/Index.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/page-default.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/page-default.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/classes/Views/Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/classes/Views/Content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/form/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/form/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/html/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/html/html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootloader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/classes/Views/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/classes/Views/Form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/functions/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/pages/my.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/my.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +153,7 @@
       <workItem from="1600679013499" duration="5015000" />
       <workItem from="1600699004500" duration="19105000" />
       <workItem from="1601014091220" duration="16527000" />
-      <workItem from="1601272988405" duration="51702000" />
+      <workItem from="1601272988405" duration="59379000" />
     </task>
     <servers />
   </component>
@@ -200,11 +201,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601371663814" />
-    <state x="680" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600069687504">
+    <state x="680" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601397084695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="657" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1855.1080@0.0.1855.1080" timestamp="1599676790526" />
-    <state x="680" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600069687504" />
+    <state x="680" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601397084695" />
     <state x="715" y="223" key="#xdebugger.evaluate" timestamp="1599142879254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -261,10 +262,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599163849458" />
-    <state x="721" y="243" key="NewPhpClassDialog" timestamp="1601383440125">
+    <state x="721" y="243" key="NewPhpClassDialog" timestamp="1601397509435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="721" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601383440125" />
+    <state x="721" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601397509435" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1598612484533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -293,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601370788468" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601362023740">
+    <state x="758" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1601399471046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601362023740" />
+    <state x="758" y="201" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601399471046" />
     <state x="689" y="234" width="672" height="705" key="search.everywhere.popup/97.0.1823.1080@97.0.1823.1080" timestamp="1599673367420" />
   </component>
 </project>

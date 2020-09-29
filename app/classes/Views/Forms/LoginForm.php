@@ -45,12 +45,6 @@ use Core\Views\Form;
                         'title' => 'Login',
                     ],
                 ],
-                'validators' => [
-                    'validate_login' => [
-                        'user_name',
-                        'password'
-                    ]
-                ],
             ];
 
             parent::__construct($form);
