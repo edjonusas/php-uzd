@@ -4,14 +4,13 @@ require '../../bootloader.php';
 use App\App;
 use App\Pixels\Pixel;
 use App\Views\Forms\AddForm;
-use Core\Views\Navigation;
+use App\Views\Pages\BasePage;
 
 if (!App::$session->getUser()) {
     header('Location: login.php');
     exit();
 }
 
-$navigation = new Navigation();
 $add_form = new AddForm();
 
 if ($add_form->isSubmitted()) {
@@ -23,24 +22,10 @@ if ($add_form->isSubmitted()) {
     }
 }
 
-//var_dump($form);
+$addPage = new BasePage();
+$addPage->setTitle('Add pixel');
+$addPage->addCss('../css/style.css');
+$addPage->setContent($add_form->render());
+print $addPage->render();
 
 ?>
-
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Add pixels</title>
-	<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<header>
-    <?php print $navigation->render(); ?>
-</header>
-<?php print $add_form->render(); ?>
-</body>
-</html>

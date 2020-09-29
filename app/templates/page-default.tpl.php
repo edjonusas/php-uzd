@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?= $data['title'] ?></title>
     <?php foreach ($data['css'] as $css): ?>
-		<link rel="stylesheet" href="css/<?= $css ?>">
+		<link rel="stylesheet" href="<?= $css ?>">
     <?php endforeach; ?>
     <?php foreach ($data['js'] as $js): ?>
 		<script src="<?= $js ?>" defer></script>

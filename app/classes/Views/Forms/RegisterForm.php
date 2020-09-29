@@ -16,7 +16,7 @@ class RegisterForm extends Form
             ],
             'fields' => [
                 'user_name' => [
-                    'label' => 'User name',
+                    'label' => 'User Name',
                     'type' => 'text',
                     'value' => '',
                     'validators' =>
@@ -26,7 +26,7 @@ class RegisterForm extends Form
                         ],
                     'extra' => [
                         'attr' => [
-                            'placeholder' => 'Enter Your User name'
+                            'placeholder' => 'Enter Your User Name'
                         ]
                     ]
                 ],

@@ -21,10 +21,8 @@ class BasePage extends \Core\Views\Page
     public function __construct()
     {
         $nav = new Navigation();
-
         $this->setTitle('unkown page');
-        $this->addCSS('style.css');
         $this->setHeader($nav->render());
-        $this->setFooter('Footeris');
+        $this->setFooter('cia gal bus achujenas Footeris');
     }
 }
