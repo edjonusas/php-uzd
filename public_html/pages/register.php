@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Controllers\Auth\RegisterController;
+use App\Controllers\Guest\RegisterController;
 
 require '../../bootloader.php';
 

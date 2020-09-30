@@ -1,6 +1,6 @@
 <?php
 
-use App\Controllers\pixelsController;
+use App\Controllers\Guest\pixelsController;
 
 require '../bootloader.php';
 

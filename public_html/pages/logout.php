@@ -1,6 +1,9 @@
 <?php
+
+use App\Controllers\User\LogoutController;
+
 require('../../bootloader.php');
 
-$controller = new \App\Controllers\Auth\LogoutController();
+$controller = new LogoutController();
 $controller->index();
 

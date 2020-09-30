@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Controllers\Auth;
+namespace App\Controllers\Guest;
 
 use App\Abstracts\Controller;
 use App\App;
+use App\Users\User;
+use App\Views\Forms\RegisterForm;
 
-class LogoutController extends Controller
+class RegisterController extends Controller
 {
 
     /**
@@ -35,6 +37,24 @@ class LogoutController extends Controller
      */
     function index(): ?string
     {
-        App::$session->logout('login.php');
+        if (App::$session->getUser()) {
+            header('Location: my.php');
+        }
+
+        $register = new RegisterForm();
+
+        if ($register->isSubmitted()) {
+            if ($register->validate()) {
+                $user = new User($register->getSubmitData());
+                App::$db->insertRow('users', $user->_getData());
+                header('Location: login.php');
+                exit();
+            }
+        }
+
+        $this->page->setTitle('Registration');
+        $this->page->addCss('../css/style.css');
+        $this->page->setContent($register->render());
+        return $this->page->render();
     }
 }

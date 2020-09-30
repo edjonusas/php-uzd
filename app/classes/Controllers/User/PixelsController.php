@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\User;
 
 use App\Abstracts\Controller;
+use App\Abstracts\UserController;
 use App\App;
 use App\Pixels\Pixel;
 use App\Views\Forms\AddForm;
 use Core\Views\Content;
 
-class pixelsController extends Controller
+class pixelsController extends UserController
 {
     /**
      * This method builds or sets
@@ -47,11 +48,6 @@ class pixelsController extends Controller
 
     public function my()
     {
-        if (!App::$session->getUser()) {
-            header('Location: login.php');
-            exit();
-        }
-
         $UserPixels = ['user_name' => $_SESSION['user_name']];
         $data['pixels'] = App::$db->getRowsWhere('pixels', $UserPixels);
         $content = new Content($data);
@@ -63,11 +59,6 @@ class pixelsController extends Controller
 
     public function add()
     {
-
-        if (!App::$session->getUser()) {
-            header('Location: login.php');
-            exit();
-        }
 
         $add_form = new AddForm();
 

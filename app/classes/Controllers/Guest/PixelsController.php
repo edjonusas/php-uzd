@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Controllers\Auth;
+namespace App\Controllers\Guest;
 
 use App\Abstracts\Controller;
-use App\Users\User;
-use App\Views\Forms\RegisterForm;
-use App\Views\Pages\BasePage;
 use App\App;
-class RegisterController extends Controller
-{
+use Core\Views\Content;
 
+class pixelsController extends Controller
+{
     /**
      * This method builds or sets
      * current $page content
@@ -35,22 +33,13 @@ class RegisterController extends Controller
      *
      * @return string|null
      */
-    function index(): ?string
+    public function index(): ?string
     {
-        $register = new RegisterForm();
-
-        if ($register->isSubmitted()) {
-            if ($register->validate()) {
-                $user = new User($register->getSubmitData());
-                App::$db->insertRow('users', $user->_getData());
-                header('Location: login.php');
-                exit();
-            }
-        }
-
-        $this->page->setTitle('Registration');
-        $this->page->addCss('../css/style.css');
-        $this->page->setContent($register->render());
+        $data['pixels'] = App::$db->getRowsWhere('pixels', []);
+        $content = new Content($data);
+        $this->page->setTitle('All Pixels');
+        $this->page->addCss('/css/style.css');
+        $this->page->setContent($content->render('index.tpl.php'));
         return $this->page->render();
     }
 }

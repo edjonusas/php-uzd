@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Controllers\Auth;
+namespace App\Controllers\User;
 
 use App\Abstracts\Controller;
-use App\Views\Forms\LoginForm;
 use App\App;
 
-class LoginController extends Controller
+class LogoutController extends Controller
 {
 
     /**
@@ -36,23 +35,6 @@ class LoginController extends Controller
      */
     function index(): ?string
     {
-        $login = new LoginForm();
-
-        if ($login->isSubmitted()) {
-            if ($login->validate()) {
-                if (App::$session->login($login->getSubmitData()['user_name'], $login->getSubmitData()['password'])) {
-                    header('Location: my.php');
-                } else {
-                    $login->addError('Wrong user name or password');
-                }
-            } else {
-                $login->addError('Fill the login form');
-            }
-        }
-
-        $this->page->setTitle('Login');
-        $this->page->addCss('../css/style.css');
-        $this->page->setContent($login->render());
-        return $this->page->render();
+        App::$session->logout('login.php');
     }
 }

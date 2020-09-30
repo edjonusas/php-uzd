@@ -20,16 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb383359-2951-428a-a6c8-d2d8b2171522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/classes/Abstracts/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Auth/LogoutController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/PixelsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Abstracts/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/User/PixelsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Controllers/Guest/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Controllers/Auth/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Controllers/User/LogoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Controllers/Guest/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Controllers/PixelsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Controllers/Guest/PixelsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/content/Index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/content/Index.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/install.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/install.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/pages/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/pages/logout.php" afterDir="false" />
@@ -67,18 +66,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/classes/Controllers/Guest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="COPY_ALWAYS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes\Controllers\Guest" />
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes\Controllers\User" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes\Controllers\User" />
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes\Controllers\Guest" />
+      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes\Abstracts" />
       <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes\Controllers\Auth" />
       <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\classes" />
-      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\core\classes" />
-      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\core" />
-      <recent name="C:\Users\Edvinas\OneDrive\Desktop\www\app\functions\html" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.validators.php">
@@ -157,7 +160,7 @@
       <workItem from="1600699004500" duration="19105000" />
       <workItem from="1601014091220" duration="16527000" />
       <workItem from="1601272988405" duration="61329000" />
-      <workItem from="1601446058067" duration="6855000" />
+      <workItem from="1601446058067" duration="11105000" />
     </task>
     <servers />
   </component>
@@ -201,10 +204,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="723" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601282335537" />
-    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1601452372914">
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1601456263416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601452372914" />
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601456263416" />
     <state x="808" y="358" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601448483703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

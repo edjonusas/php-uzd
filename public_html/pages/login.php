@@ -1,6 +1,6 @@
 <?php
 
-use App\Controllers\Auth\LoginController;
+use App\Controllers\Guest\LoginController;
 
 require '../../bootloader.php';
 
