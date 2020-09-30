@@ -1,5 +1,5 @@
 <div class="wall">
-    <?php foreach ($data ?? [] as $pixel) : ?>
+    <?php foreach ($data['pixels'] ?? [] as $pixel) : ?>
 		<span class="pixel"
 		      style=" bottom: <?php print $pixel['y'] ?>px;
 				      left: <?php print $pixel['x'] ?>px;
